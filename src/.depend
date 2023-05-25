@@ -1,0 +1,307 @@
+# DO NOT DELETE
+
+anasc.o: /usr/include/stdio.h /usr/include/features.h
+anasc.o: /usr/include/sys/cdefs.h /usr/include/bits/wordsize.h
+anasc.o: /usr/include/gnu/stubs.h /usr/include/gnu/stubs-64.h
+anasc.o: /usr/include/bits/types.h /usr/include/bits/typesizes.h
+anasc.o: /usr/include/libio.h /usr/include/_G_config.h /usr/include/wchar.h
+anasc.o: /usr/include/bits/wchar.h /usr/include/gconv.h
+anasc.o: /usr/include/bits/stdio_lim.h /usr/include/bits/sys_errlist.h
+anasc.o: /usr/include/stdlib.h /usr/include/sys/types.h /usr/include/time.h
+anasc.o: /usr/include/endian.h /usr/include/bits/endian.h
+anasc.o: /usr/include/sys/select.h /usr/include/bits/select.h
+anasc.o: /usr/include/bits/sigset.h /usr/include/bits/time.h
+anasc.o: /usr/include/sys/sysmacros.h /usr/include/bits/pthreadtypes.h
+anasc.o: /usr/include/alloca.h /usr/include/unistd.h
+anasc.o: /usr/include/bits/posix_opt.h /usr/include/bits/confname.h
+anasc.o: /usr/include/getopt.h /usr/include/arpa/inet.h
+anasc.o: /usr/include/netinet/in.h /usr/include/stdint.h
+anasc.o: /usr/include/sys/socket.h /usr/include/sys/uio.h
+anasc.o: /usr/include/bits/uio.h /usr/include/bits/socket.h
+anasc.o: /usr/include/limits.h /usr/include/bits/posix1_lim.h
+anasc.o: /usr/include/bits/local_lim.h /usr/include/linux/limits.h
+anasc.o: /usr/include/bits/posix2_lim.h /usr/include/bits/sockaddr.h
+anasc.o: /usr/include/asm/socket.h /usr/include/asm-generic/socket.h
+anasc.o: /usr/include/asm/sockios.h /usr/include/asm-generic/sockios.h
+anasc.o: /usr/include/bits/in.h /usr/include/bits/byteswap.h
+anasc.o: /usr/include/errno.h /usr/include/bits/errno.h
+anasc.o: /usr/include/linux/errno.h /usr/include/asm/errno.h
+anasc.o: /usr/include/asm/errno.h /usr/include/asm-generic/errno.h
+anasc.o: /usr/include/asm-generic/errno-base.h /usr/include/math.h
+anasc.o: /usr/include/bits/huge_val.h /usr/include/bits/mathdef.h
+anasc.o: /usr/include/bits/mathcalls.h /usr/include/signal.h
+anasc.o: /usr/include/bits/signum.h /usr/include/bits/siginfo.h
+anasc.o: /usr/include/bits/sigaction.h /usr/include/bits/sigcontext.h
+anasc.o: /usr/include/bits/sigstack.h /usr/include/bits/sigthread.h
+anasc.o: ../include/ana9.h config.h ../include/kinema.h ../include/vectcalc.h
+anasc.o: ../include/router.h /usr/include/sys/ipc.h
+anasc.o: /usr/include/bits/ipctypes.h /usr/include/bits/ipc.h
+anasc.o: /usr/include/sys/msg.h /usr/include/bits/msq.h
+tcplib.o: /usr/include/stdio.h /usr/include/features.h
+tcplib.o: /usr/include/sys/cdefs.h /usr/include/bits/wordsize.h
+tcplib.o: /usr/include/gnu/stubs.h /usr/include/gnu/stubs-64.h
+tcplib.o: /usr/include/bits/types.h /usr/include/bits/typesizes.h
+tcplib.o: /usr/include/libio.h /usr/include/_G_config.h /usr/include/wchar.h
+tcplib.o: /usr/include/bits/wchar.h /usr/include/gconv.h
+tcplib.o: /usr/include/bits/stdio_lim.h /usr/include/bits/sys_errlist.h
+tcplib.o: /usr/include/stdlib.h /usr/include/sys/types.h /usr/include/time.h
+tcplib.o: /usr/include/endian.h /usr/include/bits/endian.h
+tcplib.o: /usr/include/sys/select.h /usr/include/bits/select.h
+tcplib.o: /usr/include/bits/sigset.h /usr/include/bits/time.h
+tcplib.o: /usr/include/sys/sysmacros.h /usr/include/bits/pthreadtypes.h
+tcplib.o: /usr/include/alloca.h /usr/include/string.h /usr/include/fcntl.h
+tcplib.o: /usr/include/bits/fcntl.h /usr/include/sys/socket.h
+tcplib.o: /usr/include/sys/uio.h /usr/include/bits/uio.h
+tcplib.o: /usr/include/bits/socket.h /usr/include/limits.h
+tcplib.o: /usr/include/bits/posix1_lim.h /usr/include/bits/local_lim.h
+tcplib.o: /usr/include/linux/limits.h /usr/include/bits/posix2_lim.h
+tcplib.o: /usr/include/bits/sockaddr.h /usr/include/asm/socket.h
+tcplib.o: /usr/include/asm-generic/socket.h /usr/include/asm/sockios.h
+tcplib.o: /usr/include/asm-generic/sockios.h /usr/include/errno.h
+tcplib.o: /usr/include/bits/errno.h /usr/include/linux/errno.h
+tcplib.o: /usr/include/asm/errno.h /usr/include/asm-generic/errno.h
+tcplib.o: /usr/include/asm-generic/errno.h
+tcplib.o: /usr/include/asm-generic/errno-base.h /usr/include/netinet/in.h
+tcplib.o: /usr/include/stdint.h /usr/include/bits/in.h
+tcplib.o: /usr/include/bits/byteswap.h /usr/include/netdb.h
+tcplib.o: /usr/include/rpc/netdb.h /usr/include/bits/netdb.h
+tcplib.o: /usr/include/unistd.h /usr/include/bits/posix_opt.h
+tcplib.o: /usr/include/bits/confname.h /usr/include/getopt.h
+tcplib.o: ../include/router.h /usr/include/sys/ipc.h
+tcplib.o: /usr/include/bits/ipctypes.h /usr/include/bits/ipc.h
+tcplib.o: /usr/include/sys/msg.h /usr/include/bits/msq.h
+eventid.o: /usr/include/stdio.h /usr/include/features.h
+eventid.o: /usr/include/sys/cdefs.h /usr/include/bits/wordsize.h
+eventid.o: /usr/include/gnu/stubs.h /usr/include/gnu/stubs-64.h
+eventid.o: /usr/include/bits/types.h /usr/include/bits/typesizes.h
+eventid.o: /usr/include/libio.h /usr/include/_G_config.h /usr/include/wchar.h
+eventid.o: /usr/include/bits/wchar.h /usr/include/gconv.h
+eventid.o: /usr/include/bits/stdio_lim.h /usr/include/bits/sys_errlist.h
+eventid.o: ../include/ana10.h
+fera.o: /usr/include/stdio.h /usr/include/features.h /usr/include/sys/cdefs.h
+fera.o: /usr/include/bits/wordsize.h /usr/include/gnu/stubs.h
+fera.o: /usr/include/gnu/stubs-64.h /usr/include/bits/types.h
+fera.o: /usr/include/bits/typesizes.h /usr/include/libio.h
+fera.o: /usr/include/_G_config.h /usr/include/wchar.h
+fera.o: /usr/include/bits/wchar.h /usr/include/gconv.h
+fera.o: /usr/include/bits/stdio_lim.h /usr/include/bits/sys_errlist.h
+fera.o: ../include/ana10.h
+mwpcpcos2.o: /usr/include/stdio.h /usr/include/features.h
+mwpcpcos2.o: /usr/include/sys/cdefs.h /usr/include/bits/wordsize.h
+mwpcpcos2.o: /usr/include/gnu/stubs.h /usr/include/gnu/stubs-64.h
+mwpcpcos2.o: /usr/include/bits/types.h /usr/include/bits/typesizes.h
+mwpcpcos2.o: /usr/include/libio.h /usr/include/_G_config.h
+mwpcpcos2.o: /usr/include/wchar.h /usr/include/bits/wchar.h
+mwpcpcos2.o: /usr/include/gconv.h /usr/include/bits/stdio_lim.h
+mwpcpcos2.o: /usr/include/bits/sys_errlist.h ../include/ana10.h
+mwpcpcos2.o: ../include/vectcalc.h
+startup.o: /usr/include/stdio.h /usr/include/features.h
+startup.o: /usr/include/sys/cdefs.h /usr/include/bits/wordsize.h
+startup.o: /usr/include/gnu/stubs.h /usr/include/gnu/stubs-64.h
+startup.o: /usr/include/bits/types.h /usr/include/bits/typesizes.h
+startup.o: /usr/include/libio.h /usr/include/_G_config.h /usr/include/wchar.h
+startup.o: /usr/include/bits/wchar.h /usr/include/gconv.h
+startup.o: /usr/include/bits/stdio_lim.h /usr/include/bits/sys_errlist.h
+startup.o: /usr/include/stdlib.h /usr/include/sys/types.h /usr/include/time.h
+startup.o: /usr/include/endian.h /usr/include/bits/endian.h
+startup.o: /usr/include/sys/select.h /usr/include/bits/select.h
+startup.o: /usr/include/bits/sigset.h /usr/include/bits/time.h
+startup.o: /usr/include/sys/sysmacros.h /usr/include/bits/pthreadtypes.h
+startup.o: /usr/include/alloca.h /usr/include/string.h /usr/include/errno.h
+startup.o: /usr/include/bits/errno.h /usr/include/linux/errno.h
+startup.o: /usr/include/asm/errno.h /usr/include/asm-generic/errno.h
+startup.o: /usr/include/asm-generic/errno.h
+startup.o: /usr/include/asm-generic/errno-base.h /usr/include/sys/stat.h
+startup.o: /usr/include/bits/stat.h /usr/include/fcntl.h
+startup.o: /usr/include/bits/fcntl.h /usr/include/unistd.h
+startup.o: /usr/include/bits/posix_opt.h /usr/include/bits/confname.h
+startup.o: /usr/include/getopt.h ../include/router.h /usr/include/sys/ipc.h
+startup.o: /usr/include/bits/ipctypes.h /usr/include/bits/ipc.h
+startup.o: /usr/include/sys/msg.h /usr/include/bits/msq.h ../include/kinema.h
+startup.o: ../include/ana10.h config.h
+vdccalib.o: /usr/include/stdio.h /usr/include/features.h
+vdccalib.o: /usr/include/sys/cdefs.h /usr/include/bits/wordsize.h
+vdccalib.o: /usr/include/gnu/stubs.h /usr/include/gnu/stubs-64.h
+vdccalib.o: /usr/include/bits/types.h /usr/include/bits/typesizes.h
+vdccalib.o: /usr/include/libio.h /usr/include/_G_config.h
+vdccalib.o: /usr/include/wchar.h /usr/include/bits/wchar.h
+vdccalib.o: /usr/include/gconv.h /usr/include/bits/stdio_lim.h
+vdccalib.o: /usr/include/bits/sys_errlist.h /usr/include/stdlib.h
+vdccalib.o: /usr/include/sys/types.h /usr/include/time.h
+vdccalib.o: /usr/include/endian.h /usr/include/bits/endian.h
+vdccalib.o: /usr/include/sys/select.h /usr/include/bits/select.h
+vdccalib.o: /usr/include/bits/sigset.h /usr/include/bits/time.h
+vdccalib.o: /usr/include/sys/sysmacros.h /usr/include/bits/pthreadtypes.h
+vdccalib.o: /usr/include/alloca.h /usr/include/unistd.h
+vdccalib.o: /usr/include/bits/posix_opt.h /usr/include/bits/confname.h
+vdccalib.o: /usr/include/getopt.h /usr/include/arpa/inet.h
+vdccalib.o: /usr/include/netinet/in.h /usr/include/stdint.h
+vdccalib.o: /usr/include/sys/socket.h /usr/include/sys/uio.h
+vdccalib.o: /usr/include/bits/uio.h /usr/include/bits/socket.h
+vdccalib.o: /usr/include/limits.h /usr/include/bits/posix1_lim.h
+vdccalib.o: /usr/include/bits/local_lim.h /usr/include/linux/limits.h
+vdccalib.o: /usr/include/bits/posix2_lim.h /usr/include/bits/sockaddr.h
+vdccalib.o: /usr/include/asm/socket.h /usr/include/asm-generic/socket.h
+vdccalib.o: /usr/include/asm/sockios.h /usr/include/asm-generic/sockios.h
+vdccalib.o: /usr/include/bits/in.h /usr/include/bits/byteswap.h
+vdccalib.o: /usr/include/errno.h /usr/include/bits/errno.h
+vdccalib.o: /usr/include/linux/errno.h /usr/include/asm/errno.h
+vdccalib.o: /usr/include/asm/errno.h /usr/include/asm-generic/errno.h
+vdccalib.o: /usr/include/asm-generic/errno-base.h /usr/include/math.h
+vdccalib.o: /usr/include/bits/huge_val.h /usr/include/bits/mathdef.h
+vdccalib.o: /usr/include/bits/mathcalls.h ../include/ana10.h
+blp.o: /usr/include/stdio.h /usr/include/features.h /usr/include/sys/cdefs.h
+blp.o: /usr/include/bits/wordsize.h /usr/include/gnu/stubs.h
+blp.o: /usr/include/gnu/stubs-64.h /usr/include/bits/types.h
+blp.o: /usr/include/bits/typesizes.h /usr/include/libio.h
+blp.o: /usr/include/_G_config.h /usr/include/wchar.h
+blp.o: /usr/include/bits/wchar.h /usr/include/gconv.h
+blp.o: /usr/include/bits/stdio_lim.h /usr/include/bits/sys_errlist.h
+blp.o: ../include/ana10.h
+vectcalc.o: /usr/include/math.h /usr/include/features.h
+vectcalc.o: /usr/include/sys/cdefs.h /usr/include/bits/wordsize.h
+vectcalc.o: /usr/include/gnu/stubs.h /usr/include/gnu/stubs-64.h
+vectcalc.o: /usr/include/bits/huge_val.h /usr/include/bits/mathdef.h
+vectcalc.o: /usr/include/bits/mathcalls.h ../include/ana10.h
+vectcalc.o: /usr/include/stdio.h /usr/include/bits/types.h
+vectcalc.o: /usr/include/bits/typesizes.h /usr/include/libio.h
+vectcalc.o: /usr/include/_G_config.h /usr/include/wchar.h
+vectcalc.o: /usr/include/bits/wchar.h /usr/include/gconv.h
+vectcalc.o: /usr/include/bits/stdio_lim.h /usr/include/bits/sys_errlist.h
+raytrace.o: /usr/include/stdio.h /usr/include/features.h
+raytrace.o: /usr/include/sys/cdefs.h /usr/include/bits/wordsize.h
+raytrace.o: /usr/include/gnu/stubs.h /usr/include/gnu/stubs-64.h
+raytrace.o: /usr/include/bits/types.h /usr/include/bits/typesizes.h
+raytrace.o: /usr/include/libio.h /usr/include/_G_config.h
+raytrace.o: /usr/include/wchar.h /usr/include/bits/wchar.h
+raytrace.o: /usr/include/gconv.h /usr/include/bits/stdio_lim.h
+raytrace.o: /usr/include/bits/sys_errlist.h /usr/include/math.h
+raytrace.o: /usr/include/bits/huge_val.h /usr/include/bits/mathdef.h
+raytrace.o: /usr/include/bits/mathcalls.h ../include/ana10.h config.h
+raytrace.o: ../include/kinema.h ../include/vectcalc.h
+scaler.o: /usr/include/stdio.h /usr/include/features.h
+scaler.o: /usr/include/sys/cdefs.h /usr/include/bits/wordsize.h
+scaler.o: /usr/include/gnu/stubs.h /usr/include/gnu/stubs-64.h
+scaler.o: /usr/include/bits/types.h /usr/include/bits/typesizes.h
+scaler.o: /usr/include/libio.h /usr/include/_G_config.h /usr/include/wchar.h
+scaler.o: /usr/include/bits/wchar.h /usr/include/gconv.h
+scaler.o: /usr/include/bits/stdio_lim.h /usr/include/bits/sys_errlist.h
+scaler.o: ../include/ana10.h
+ssd_3351.o: ../include/ana10.h /usr/include/stdio.h /usr/include/features.h
+ssd_3351.o: /usr/include/sys/cdefs.h /usr/include/bits/wordsize.h
+ssd_3351.o: /usr/include/gnu/stubs.h /usr/include/gnu/stubs-64.h
+ssd_3351.o: /usr/include/bits/types.h /usr/include/bits/typesizes.h
+ssd_3351.o: /usr/include/libio.h /usr/include/_G_config.h
+ssd_3351.o: /usr/include/wchar.h /usr/include/bits/wchar.h
+ssd_3351.o: /usr/include/gconv.h /usr/include/bits/stdio_lim.h
+ssd_3351.o: /usr/include/bits/sys_errlist.h
+kinelib.o: /usr/include/stdio.h /usr/include/features.h
+kinelib.o: /usr/include/sys/cdefs.h /usr/include/bits/wordsize.h
+kinelib.o: /usr/include/gnu/stubs.h /usr/include/gnu/stubs-64.h
+kinelib.o: /usr/include/bits/types.h /usr/include/bits/typesizes.h
+kinelib.o: /usr/include/libio.h /usr/include/_G_config.h /usr/include/wchar.h
+kinelib.o: /usr/include/bits/wchar.h /usr/include/gconv.h
+kinelib.o: /usr/include/bits/stdio_lim.h /usr/include/bits/sys_errlist.h
+kinelib.o: /usr/include/math.h /usr/include/bits/huge_val.h
+kinelib.o: /usr/include/bits/mathdef.h /usr/include/bits/mathcalls.h
+vdc3377_v6.o: /usr/include/stdio.h /usr/include/features.h
+vdc3377_v6.o: /usr/include/sys/cdefs.h /usr/include/bits/wordsize.h
+vdc3377_v6.o: /usr/include/gnu/stubs.h /usr/include/gnu/stubs-64.h
+vdc3377_v6.o: /usr/include/bits/types.h /usr/include/bits/typesizes.h
+vdc3377_v6.o: /usr/include/libio.h /usr/include/_G_config.h
+vdc3377_v6.o: /usr/include/wchar.h /usr/include/bits/wchar.h
+vdc3377_v6.o: /usr/include/gconv.h /usr/include/bits/stdio_lim.h
+vdc3377_v6.o: /usr/include/bits/sys_errlist.h /usr/include/math.h
+vdc3377_v6.o: /usr/include/bits/huge_val.h /usr/include/bits/mathdef.h
+vdc3377_v6.o: /usr/include/bits/mathcalls.h /usr/include/string.h
+vdc3377_v6.o: /usr/include/stdlib.h /usr/include/sys/types.h
+vdc3377_v6.o: /usr/include/time.h /usr/include/endian.h
+vdc3377_v6.o: /usr/include/bits/endian.h /usr/include/sys/select.h
+vdc3377_v6.o: /usr/include/bits/select.h /usr/include/bits/sigset.h
+vdc3377_v6.o: /usr/include/bits/time.h /usr/include/sys/sysmacros.h
+vdc3377_v6.o: /usr/include/bits/pthreadtypes.h /usr/include/alloca.h
+vdc3377_v6.o: ../include/ana10.h config.h ../include/kinema.h
+vdc3377_v6.o: ../include/vectcalc.h
+mwpceff.o: /usr/include/math.h /usr/include/features.h
+mwpceff.o: /usr/include/sys/cdefs.h /usr/include/bits/wordsize.h
+mwpceff.o: /usr/include/gnu/stubs.h /usr/include/gnu/stubs-64.h
+mwpceff.o: /usr/include/bits/huge_val.h /usr/include/bits/mathdef.h
+mwpceff.o: /usr/include/bits/mathcalls.h /usr/include/stdio.h
+mwpceff.o: /usr/include/bits/types.h /usr/include/bits/typesizes.h
+mwpceff.o: /usr/include/libio.h /usr/include/_G_config.h /usr/include/wchar.h
+mwpceff.o: /usr/include/bits/wchar.h /usr/include/gconv.h
+mwpceff.o: /usr/include/bits/stdio_lim.h /usr/include/bits/sys_errlist.h
+mwpceff.o: ../include/ana10.h config.h ../include/kinema.h
+mwpceff.o: ../include/vectcalc.h
+lasmat.o: /usr/include/stdio.h /usr/include/features.h
+lasmat.o: /usr/include/sys/cdefs.h /usr/include/bits/wordsize.h
+lasmat.o: /usr/include/gnu/stubs.h /usr/include/gnu/stubs-64.h
+lasmat.o: /usr/include/bits/types.h /usr/include/bits/typesizes.h
+lasmat.o: /usr/include/libio.h /usr/include/_G_config.h /usr/include/wchar.h
+lasmat.o: /usr/include/bits/wchar.h /usr/include/gconv.h
+lasmat.o: /usr/include/bits/stdio_lim.h /usr/include/bits/sys_errlist.h
+lasmat.o: /usr/include/math.h /usr/include/bits/huge_val.h
+lasmat.o: /usr/include/bits/mathdef.h /usr/include/bits/mathcalls.h
+lasmat.o: ../include/ana10.h config.h ../include/kinema.h
+grmat.o: /usr/include/stdio.h /usr/include/features.h
+grmat.o: /usr/include/sys/cdefs.h /usr/include/bits/wordsize.h
+grmat.o: /usr/include/gnu/stubs.h /usr/include/gnu/stubs-64.h
+grmat.o: /usr/include/bits/types.h /usr/include/bits/typesizes.h
+grmat.o: /usr/include/libio.h /usr/include/_G_config.h /usr/include/wchar.h
+grmat.o: /usr/include/bits/wchar.h /usr/include/gconv.h
+grmat.o: /usr/include/bits/stdio_lim.h /usr/include/bits/sys_errlist.h
+grmat.o: /usr/include/math.h /usr/include/bits/huge_val.h
+grmat.o: /usr/include/bits/mathdef.h /usr/include/bits/mathcalls.h
+grmat.o: ../include/ana10.h config.h ../include/kinema.h
+
+vdceffv2.o: /usr/include/math.h /usr/include/features.h
+vdceffv2.o: /usr/include/sys/cdefs.h /usr/include/bits/wordsize.h
+vdceffv2.o: /usr/include/gnu/stubs.h /usr/include/gnu/stubs-64.h
+vdceffv2.o: /usr/include/bits/huge_val.h /usr/include/bits/mathdef.h
+vdceffv2.o: /usr/include/bits/mathcalls.h /usr/include/stdio.h
+vdceffv2.o: /usr/include/bits/types.h /usr/include/bits/typesizes.h
+vdceffv2.o: /usr/include/libio.h /usr/include/_G_config.h
+vdceffv2.o: /usr/include/wchar.h /usr/include/bits/wchar.h
+vdceffv2.o: /usr/include/gconv.h /usr/include/bits/stdio_lim.h
+vdceffv2.o: /usr/include/bits/sys_errlist.h ../include/ana10.h config.h
+vdceffv2.o: ../include/kinema.h ../include/vectcalc.h correction.c
+
+ana_v1.70.o: /usr/include/stdio.h /usr/include/features.h
+ana_v1.70.o: /usr/include/sys/cdefs.h /usr/include/bits/wordsize.h
+ana_v1.70.o: /usr/include/gnu/stubs.h /usr/include/gnu/stubs-64.h
+ana_v1.70.o: /usr/include/bits/types.h /usr/include/bits/typesizes.h
+ana_v1.70.o: /usr/include/libio.h /usr/include/_G_config.h
+ana_v1.70.o: /usr/include/wchar.h /usr/include/bits/wchar.h
+ana_v1.70.o: /usr/include/gconv.h /usr/include/bits/stdio_lim.h
+ana_v1.70.o: /usr/include/bits/sys_errlist.h /usr/include/stdlib.h
+ana_v1.70.o: /usr/include/sys/types.h /usr/include/time.h
+ana_v1.70.o: /usr/include/endian.h /usr/include/bits/endian.h
+ana_v1.70.o: /usr/include/sys/select.h /usr/include/bits/select.h
+ana_v1.70.o: /usr/include/bits/sigset.h /usr/include/bits/time.h
+ana_v1.70.o: /usr/include/sys/sysmacros.h /usr/include/bits/pthreadtypes.h
+ana_v1.70.o: /usr/include/alloca.h /usr/include/unistd.h
+ana_v1.70.o: /usr/include/bits/posix_opt.h /usr/include/bits/confname.h
+ana_v1.70.o: /usr/include/getopt.h /usr/include/arpa/inet.h
+ana_v1.70.o: /usr/include/netinet/in.h /usr/include/stdint.h
+ana_v1.70.o: /usr/include/sys/socket.h /usr/include/sys/uio.h
+ana_v1.70.o: /usr/include/bits/uio.h /usr/include/bits/socket.h
+ana_v1.70.o: /usr/include/limits.h /usr/include/bits/posix1_lim.h
+ana_v1.70.o: /usr/include/bits/local_lim.h /usr/include/linux/limits.h
+ana_v1.70.o: /usr/include/bits/posix2_lim.h /usr/include/bits/sockaddr.h
+ana_v1.70.o: /usr/include/asm/socket.h /usr/include/asm-generic/socket.h
+ana_v1.70.o: /usr/include/asm/sockios.h /usr/include/asm-generic/sockios.h
+ana_v1.70.o: /usr/include/bits/in.h /usr/include/bits/byteswap.h
+ana_v1.70.o: /usr/include/errno.h /usr/include/bits/errno.h
+ana_v1.70.o: /usr/include/linux/errno.h /usr/include/asm/errno.h
+ana_v1.70.o: /usr/include/asm/errno.h /usr/include/asm-generic/errno.h
+ana_v1.70.o: /usr/include/asm-generic/errno-base.h /usr/include/math.h
+ana_v1.70.o: /usr/include/bits/huge_val.h /usr/include/bits/mathdef.h
+ana_v1.70.o: /usr/include/bits/mathcalls.h /usr/include/signal.h
+ana_v1.70.o: /usr/include/bits/signum.h /usr/include/bits/siginfo.h
+ana_v1.70.o: /usr/include/bits/sigaction.h /usr/include/bits/sigcontext.h
+ana_v1.70.o: /usr/include/bits/sigstack.h /usr/include/bits/sigthread.h
+ana_v1.70.o: ../include/ana10.h config.h ../include/kinema.h
+ana_v1.70.o: ../include/vectcalc.h ../include/router.h /usr/include/sys/ipc.h
+ana_v1.70.o: /usr/include/bits/ipctypes.h /usr/include/bits/ipc.h
+ana_v1.70.o: /usr/include/sys/msg.h /usr/include/bits/msq.h analyzing_v1.7.c
+ana_v1.70.o: correction.c booking_v1.7.c

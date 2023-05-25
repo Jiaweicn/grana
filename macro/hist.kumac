@@ -1,0 +1,657 @@
+Macro new
+	close 20
+	hist/delete *
+	hist/file 20 online.hb
+RETURN
+
+Macro hists
+	mess ' inpreg: Input register'
+	mess '   bits: Input register bits'
+	mess '  event: Event bits'
+	mess '   spin: Spin Mode'
+	mess '   hata: Hata Mode'
+	mess ' slevel: Second Level Mode'
+	mess '    adc: Plastic Scintillator ADC'
+	mess '    tdc: Plastic scintillator TDC'
+	mess '     de: Plastic scintillator Delta-E'
+	mess '   tpos: Plastic scintillator time position'
+	mess '     rf: RF'
+	mess '   wire: VDC wire hit'
+	mess '   wtdc: VDC wire TDCs'
+	mess ' nclust: VDC number of clusters/chamber'
+	mess '   nhit: VDC number of wire hits/cluster'
+	mess '  drift: VDC drift length'
+	mess '    pos: VDC positions in chambers'
+	mess '  posid: VDC position calculation ID'
+	mess '  posec: number of errors in VDC position calculation'
+	mess '    ray: VDC ray tracing'
+	mess '  rayid: VDC ray tracing ID'
+	mess '  wirep: MWPC wire hit'
+	mess 'nclustp: MWPC number of clusters/chamber'
+	mess '  nhitp: MWPC number of wire hits/cluster'
+	mess '   posp: MWPC positions in chambers'
+	mess ' posidp: MWPC position calculation ID'
+	mess '   rayp: MWPC ray tracing'
+	mess ' rayidp: MWPC ray tracing ID'
+	mess '   hadc: Hodoscope ADC'
+	mess '   htdc: Hodoscope TDC'
+	mess '    hde: Hodoscope Delta-E'
+	mess '  htpos: Hodoscope time position'
+	mess ' vertex: Second scattring vertex position'
+	mess '   scat: Scattering angle of the second scatter'
+	mess '      x: X Position'
+	mess '      y: Y Position'
+	mess '  gradx: GRAD-X VDC (correction)'
+	mess '  grady: GRAD-Y VDC (correction)'
+	mess '     xv: X Positions VDC'
+	mess '     yv: Y Positions VDC'
+	mess '     xp: X Positions MWPC'
+	mess '     yp: Y Positions MWPC'
+	mess '     ex: Excitations'
+	mess
+	wait
+	exec macro/hist#inpreg;  wait
+	exec macro/hist#bits;    wait
+	exec macro/hist#event;   wait
+	exec macro/hist#spin;    wait
+	exec macro/hist#hata;    wait
+	exec macro/hist#slevel;  wait
+	exec macro/hist#adc;     wait
+	exec macro/hist#tdc;     wait
+	exec macro/hist#de;      wait
+	exec macro/hist#tpos;    wait
+	exec macro/hist#rf;      wait
+	exec macro/hist#wire;    wait
+	exec macro/hist#wtdc;    wait
+	exec macro/hist#nclust;  wait
+	exec macro/hist#nhit;    wait
+	exec macro/hist#drift;   wait
+	exec macro/hist#pos;     wait
+	exec macro/hist#posid;   wait
+	exec macro/hist#posec;   wait
+	exec macro/hist#ray;     wait
+	exec macro/hist#rayid;   wait
+	exec macro/hist#wirep;   wait
+	exec macro/hist#nclustp; wait
+	exec macro/hist#nhitp;   wait
+	exec macro/hist#posp;    wait
+	exec macro/hist#posidp;  wait
+	exec macro/hist#rayp;    wait
+	exec macro/hist#rayidp;  wait
+	exec macro/hist#hadc;    wait
+	exec macro/hist#htdc;    wait
+	exec macro/hist#hde;     wait
+	exec macro/hist#htpos;   wait
+	exec macro/hist#vertex;  wait
+	exec macro/hist#scat;    wait
+	exec macro/hist#x;       wait
+	exec macro/hist#y;       wait
+	exec macro/hist#gradx;   wait
+	exec macro/hist#grady;   wait
+	exec macro/hist#xv;      wait
+	exec macro/hist#yv;      wait
+	exec macro/hist#xp;      wait
+	exec macro/hist#yp;      wait
+	exec macro/hist#ex;      wait
+RETURN
+
+Macro inpreg
+	zone
+  hist/plot   1
+	mess 'Input register:'
+	zone
+RETURN
+
+Macro bits
+	zone
+  hist/plot   2
+	mess 'Input Register Bits:'
+	mess '    1: N/U'
+	mess '    2: Not Spin-Up'
+	mess '    3: Not Spin-Down'
+	mess '    4: Not Cave Hata-in'
+	mess '    5: Not WN   Hata-in'
+	mess '    6: GR Event'
+	mess '    7: N/U'
+	mess '    8: LAS Event  (Single Event)'
+	mess '    9: COIN Event'
+	mess '   10: N/U'
+	mess '   11: N/U'
+	mess '   12: FPP Event'
+	mess '   13: Second Level Accept'
+	mess '   14: Second Level Reject'
+	mess '   15: N/U'
+	mess '   16: Block End Event'
+	zone
+RETURN
+
+Macro event
+	zone
+  hist/plot   3
+	mess 'Event Bits:'
+	mess '    0: No Event'
+	mess '    1: GR'
+	mess '    2: LAS'
+	mess '    3: GR & LAS'
+	mess '    4: COIN'
+	mess '    5: COIN & GR'
+	mess '    6: COIN & LAS'
+	mess '    7: COIN & GR & LAS'
+	mess '    8: FPP'
+	mess '    9: FPP & GR'
+	mess '   10: FPP & LAS'
+	mess '   11: FPP & GR & LAS'
+	mess '   12: FPP & COIN'
+	mess '   13: FPP & COIN & GR'
+	mess '   14: FPP & COIN & LAS'
+	mess '   15: FPP & COIN & GR & LAS'
+	zone
+RETURN
+
+Macro spin
+	zone
+  hist/plot   4
+	mess 'Spin Mode:'
+	mess '    0: Not spin-up nor spin-down'
+	mess '    1: spin-up'
+	mess '    2: spin-down'
+	mess '    3: spin-up and spin-down'
+	zone
+RETURN
+
+Macro hata
+	zone
+  hist/plot   5
+	mess 'Hata Mode:'
+	mess '    0: Not Hata-in'
+	mess '    1: Cave Hata-in'
+	mess '    2: WN   Hata-in'
+	mess '    3: Cave and WN Hata-in'
+	zone
+RETURN
+
+Macro slevel
+	zone
+  hist/plot   6
+	mess 'Second Level Mode:'
+	mess '    0: Not accept nor reject'
+	mess '    1: Accept'
+	mess '    2: Reject'
+	mess '    3: Accept and reject'
+	zone
+RETURN
+
+Macro adc
+	zone 2 3
+  hist/plot 101
+  hist/plot 102
+  hist/plot 103
+  hist/plot 104
+  hist/plot 105
+	mess 'Plastic Scintillator ADC:'
+	zone
+RETURN
+
+Macro tdc
+	zone 2 3
+  hist/plot 111
+  hist/plot 112
+  hist/plot 113
+  hist/plot 114
+  hist/plot 115
+	mess 'Plastic Scintillator TDC:'
+	zone
+RETURN
+
+Macro de
+	zone 1 2
+  hist/plot 121
+  hist/plot 122
+	mess 'Plastic Scintillator Delta-E:'
+	zone
+RETURN
+
+Macro tpos
+	zone 1 2
+  hist/plot 131
+  hist/plot 132
+	mess 'Plastic Scintillator Time Position:'
+	zone
+RETURN
+
+Macro rf
+	zone 1 2
+  hist/plot 116
+  hist/plot 117
+	mess 'RF'
+	zone
+RETURN
+
+Macro wire
+	zone 2 2
+  hist/plot 201
+  hist/plot 202
+  hist/plot 203
+  hist/plot 204
+	mess 'VDC Wire Hit:'
+	zone
+RETURN
+
+Macro wtdc
+	zone 2 2
+  hist/plot 211
+  hist/plot 212
+  hist/plot 213
+  hist/plot 214
+	mess 'VDC Wire TDCs:'
+	wait
+  hist/plot 215
+  hist/plot 216
+  hist/plot 217
+  hist/plot 218
+	mess 'VDC Wire TDCs vs Wire:'
+	zone
+RETURN
+
+Macro nclust
+	zone 2 2
+  hist/plot 221
+  hist/plot 222
+  hist/plot 223
+  hist/plot 224
+	mess 'VDC Number of Clusters/Chamber:'
+	zone
+RETURN
+
+Macro nhit
+	zone 2 2
+  hist/plot 231
+  hist/plot 232
+  hist/plot 233
+  hist/plot 234
+	mess 'VDC Number of Wire Hits/Cluster:'
+	zone
+RETURN
+
+Macro drift
+	zone 2 2
+  hist/plot 241
+  hist/plot 242
+  hist/plot 243
+  hist/plot 244
+	mess 'VDC Drift Length'
+	zone
+RETURN
+
+Macro pos
+	zone 2 2
+  hist/plot 251
+  hist/plot 252
+  hist/plot 253
+  hist/plot 254
+	mess 'VDC Positions in Chambers:'
+	zone
+RETURN
+
+Macro posid
+	zone 2 2
+  hist/plot 261
+  hist/plot 262
+  hist/plot 263
+  hist/plot 264
+	mess 'VDC Position Calculation ID:'
+	mess '    0: No Error'
+	mess '    1: Drift time order inconsistency'
+	mess '    2: No local minimum in drift time'
+	mess '    3: Error in least square fit procedure'
+	mess '   10: Cluster of 0 legal hit'
+	mess '   11: Cluster of 1 legal hit'
+	mess '   12: Cluster of 2 legal hits'
+	mess '   20: No cluster'
+	mess '   22: Multi clusters (2)'
+	mess '   23: Multi clusters (3)'
+	mess '       ...'
+	zone
+RETURN
+
+Macro posec
+	zone 2 2
+  hist/plot 271
+  hist/plot 272
+  hist/plot 273
+  hist/plot 274
+	mess 'Number of Errors in VDC Position Calculation:'
+	zone
+RETURN
+
+Macro ray
+	zone 2 2
+  hist/plot 281
+  hist/plot 282
+  hist/plot 283
+  hist/plot 284
+	mess 'VDC Ray Tracing:'
+	zone
+RETURN
+
+Macro rayid
+	zone 
+  hist/plot 285
+	mess 'VDC Ray Tracing ID:'
+	mess '    0: No Error'
+	mess ' 1-15: No hit of X1(=1), U1(=2), X2(=4) and U2(=8)'
+	mess '   20: Multi clusters'
+	mess '   -1: Ray tracing error in matrix inversion'
+	zone
+RETURN
+
+Macro wirep
+	zone 2 3
+  hist/plot 301
+  hist/plot 302
+  hist/plot 303
+  hist/plot 304
+  hist/plot 305
+  hist/plot 306
+	mess 'MPWC Wire Hit:'
+	zone
+RETURN
+
+Macro nclustp
+	zone 2 3
+  hist/plot 321
+  hist/plot 322
+  hist/plot 323
+  hist/plot 324
+  hist/plot 325
+  hist/plot 326
+	mess 'MWPC Number of Clusters/Chamber:'
+	zone
+RETURN
+
+Macro nhitp
+	zone 2 3
+  hist/plot 331
+  hist/plot 332
+  hist/plot 333
+  hist/plot 334
+  hist/plot 335
+  hist/plot 336
+	mess 'MWPC Number of Wire Hits/Cluster:'
+	zone
+RETURN
+
+Macro posp
+	zone 2 3
+  hist/plot 351
+  hist/plot 352
+  hist/plot 353
+  hist/plot 354
+  hist/plot 355
+  hist/plot 356
+	mess 'MWPC Positions in Chambers:'
+	zone
+RETURN
+
+Macro posidp
+	zone 2 3
+  hist/plot 361
+  hist/plot 362
+  hist/plot 363
+  hist/plot 364
+  hist/plot 365
+  hist/plot 366
+	mess 'MWPC Position Calculation ID:'
+	mess '    0: No Error'
+	mess '   20: No cluster'
+	mess '   22: Multi clusters (2)'
+	mess '   23: Multi clusters (3)'
+	mess '       ...'
+	zone
+RETURN
+
+Macro rayp
+	zone 2 2
+  hist/plot 381
+  hist/plot 382
+  hist/plot 383
+  hist/plot 384
+	mess 'MWPC Ray Tracing:'
+	zone
+RETURN
+
+Macro rayidp
+	zone 
+  hist/plot 385
+	mess 'MWPC Ray Tracing ID:'
+	mess '    0: No Error'
+	mess ' 1-15: No hit of U3(=1), V3(=2), U4(=4) and V4(=8)'
+	mess '   20: Multi clusters'
+	mess '   -1: Ray tracing error in matrix inversion'
+	zone
+RETURN
+
+Macro hadc
+	zone 2 4
+  hist/plot 501(10:1024)
+  hist/plot 509(10:1024)
+  hist/plot 501(10:1024)
+  hist/plot 510(10:1024)
+  hist/plot 503(10:1024)
+  hist/plot 511(10:1024)
+  hist/plot 504(10:1024)
+  hist/plot 512(10:1024)
+	mess 'Hodoscope-X ADCs #1'
+	wait
+  hist/plot 505(10:1024)
+  hist/plot 513(10:1024)
+  hist/plot 506(10:1024)
+  hist/plot 514(10:1024)
+  hist/plot 507(10:1024)
+  hist/plot 515(10:1024)
+  hist/plot 508(10:1024)
+  hist/plot 516(10:1024)
+	mess 'Hodoscope-X ADCs #2'
+	wait
+	zone 2 5
+  hist/plot 517(10:1024)
+  hist/plot 522(10:1024)
+  hist/plot 518(10:1024)
+  hist/plot 523(10:1024)
+  hist/plot 519(10:1024)
+  hist/plot 524(10:1024)
+  hist/plot 520(10:1024)
+  hist/plot 525(10:1024)
+  hist/plot 521(10:1024)
+  hist/plot 526(10:1024)
+	mess 'Hodoscope-Y ADCs'
+	zone
+RETURN
+
+Macro htdc
+	zone 2 4
+  hist/plot 531(10:1024)
+  hist/plot 539(10:1024)
+  hist/plot 531(10:1024)
+  hist/plot 540(10:1024)
+  hist/plot 533(10:1024)
+  hist/plot 541(10:1024)
+  hist/plot 534(10:1024)
+  hist/plot 542(10:1024)
+	mess 'Hodoscope-X TDCs #1'
+	wait
+  hist/plot 535(10:1024)
+  hist/plot 543(10:1024)
+  hist/plot 536(10:1024)
+  hist/plot 544(10:1024)
+  hist/plot 537(10:1024)
+  hist/plot 545(10:1024)
+  hist/plot 538(10:1024)
+  hist/plot 546(10:1024)
+	mess 'Hodoscope-X TDCs #2'
+	wait
+	zone 2 5
+  hist/plot 547(10:1024)
+  hist/plot 552(10:1024)
+  hist/plot 548(10:1024)
+  hist/plot 553(10:1024)
+  hist/plot 549(10:1024)
+  hist/plot 554(10:1024)
+  hist/plot 550(10:1024)
+  hist/plot 555(10:1024)
+  hist/plot 551(10:1024)
+  hist/plot 556(10:1024)
+	mess 'Hodoscope-Y TDCs'
+	zone
+RETURN
+
+Macro hde
+	zone 1 4
+  hist/plot 561
+  hist/plot 562
+  hist/plot 563
+  hist/plot 564
+	mess 'Hodoscope-X DE #1'
+	wait
+  hist/plot 565
+  hist/plot 566
+  hist/plot 567
+  hist/plot 568
+	mess 'Hodoscope-X DE #2'
+	wait
+	zone 1 5
+  hist/plot 569
+  hist/plot 570
+  hist/plot 571
+  hist/plot 572
+  hist/plot 573
+	mess 'Hodoscope-Y DE'
+	zone
+RETURN
+
+Macro htpos
+	zone 1 4
+  hist/plot 581
+  hist/plot 582
+  hist/plot 583
+  hist/plot 584
+	mess 'Hodoscope-X TPOS #1'
+	wait
+  hist/plot 585
+  hist/plot 586
+  hist/plot 587
+  hist/plot 588
+	mess 'Hodoscope-X TPOS #2'
+	wait
+	zone 1 5
+  hist/plot 589
+  hist/plot 590
+  hist/plot 591
+  hist/plot 592
+  hist/plot 593
+	mess 'Hodoscope-Y TPOS'
+	zone
+RETURN
+
+Macro vertex
+	zone 2 2
+  hist/plot 461
+  hist/plot 462
+  hist/plot 463
+  hist/plot 464
+	mess 'Second Scattring Vertex Position'
+	mess 'Vertex Distance:'
+	mess '  -1: Could not calculate vertex position (parallel)'
+	mess '  -2: Could not calculate vertex position (never shown)'
+	zone
+RETURN
+
+Macro scat
+	zone 2 2
+  hist/plot 465
+  hist/plot 466
+  hist/plot 467
+  hist/plot 468
+	mess 'Scattering Angle of the Second Scatter'
+	zone
+RETURN
+
+Macro x
+	zone 1 1
+  hist/plot 602
+	mess 'X Position'
+	zone
+RETURN
+
+Macro y
+	zone 1 1
+  hist/plot 608
+	mess 'Y Position'
+	zone
+RETURN
+
+Macro gradx
+	zone 1 1
+  hist/plot 610
+	mess 'Grad-X VDC (corrected)'
+	zone
+RETURN
+
+Macro grady
+	zone 1 1
+  hist/plot 611
+	mess 'Grad-Y VDC (corrected)'
+	zone
+RETURN
+
+Macro xv
+	zone 2 2
+  hist/plot 401
+  hist/plot 405
+  hist/plot 408
+  hist/plot 410
+	mess 'X Positions (VDC)'
+	zone
+RETURN
+
+Macro yv
+	zone 2 2
+  hist/plot 411
+  hist/plot 415
+  hist/plot 418
+  hist/plot 420
+	mess 'Y Positions (VDC)'
+	zone
+RETURN
+
+Macro xp
+	zone 2 2
+  hist/plot 421
+  hist/plot 425
+  hist/plot 428
+  hist/plot 430
+	mess 'X Positions (MWPC)'
+	zone
+RETURN
+
+Macro yp
+	zone 2 2
+  hist/plot 431
+  hist/plot 435
+  hist/plot 438
+  hist/plot 440
+	mess 'Y Positions (MWPC)'
+	zone
+RETURN
+
+Macro ex
+	zone
+  hist/plot 605
+	mess 'Excitations'
+	wait
+  hist/plot 606
+	wait
+  hist/plot 607
+	zone
+RETURN
+

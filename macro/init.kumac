@@ -1,0 +1,86 @@
+* Initialyze for me
+
+opt date
+opt stat
+opt grid
+
+alias/create		hl				'hist/list'
+alias/create		hp				'hist/plot'
+* alias/create		hf				'hist/file'
+alias/create		hf				'close 20; hist/file 20'
+
+alias/create		show			'exec macro/show'
+alias/create		save			'exec macro/save#hsave'
+alias/create		psave			'exec macro/save#psave'
+alias/create		sum				'exec macro/sum'
+alias/create		fit				'exec macro/fit'
+alias/create		addbin		'exec macro/addbin'
+alias/create    hcopyon   'exec macro/hcopy#on'
+alias/create    hcopyoff  'exec macro/hcopy#off'
+alias/create    ho        'exec macro/hout#hout'
+alias/create    ho4       'exec macro/hout#hout4'
+alias/create    howtdc    'exec macro/hout#wtdc'
+alias/create    hpol      'exec macro/pol#hpol'
+alias/create    hbk1      'exec macro/pol#hback1'
+alias/create    hbk2      'exec macro/pol#hback2'
+alias/create    px			  'exec macro/project#prox'
+alias/create    py			  'exec macro/project#proy'
+alias/create    by			  'exec macro/project#bany'
+alias/create    bx			  'exec macro/project#banx'
+
+alias/create		lps				'sh cat paw.ps | rsh nehp1 lps'
+alias/create		lpd				'sh cat paw.ps | rsh nehp1 lpd'
+
+alias/create    effvdc    'exec macro/eff#effvdc'
+
+* Histograms
+alias/create		new				'exec macro/hist#new'
+alias/create		hists			'exec macro/hist#hists'
+alias/create		inpreg		'exec macro/hist#inpreg'
+alias/create		bits			'exec macro/hist#bits'
+alias/create		event			'exec macro/hist#event'
+alias/create		spin			'exec macro/hist#spin'
+alias/create		hata			'exec macro/hist#hata'
+alias/create		slevel		'exec macro/hist#slevel'
+
+alias/create		adc				'exec macro/hist#adc'
+alias/create		tdc				'exec macro/hist#tdc'
+alias/create		de				'exec macro/hist#de'
+alias/create		tpos			'exec macro/hist#tpos'
+alias/create		rf				'exec macro/hist#rf'
+
+alias/create		wire			'exec macro/hist#wire'
+alias/create		wtdc			'exec macro/hist#wtdc'
+alias/create		nclust		'exec macro/hist#nclust'
+alias/create		nhit			'exec macro/hist#nhit'
+alias/create		drift			'exec macro/hist#drift'
+alias/create		pos				'exec macro/hist#pos'
+alias/create		posid			'exec macro/hist#posid'
+alias/create		posec			'exec macro/hist#posec'
+alias/create		ray				'exec macro/hist#ray'
+alias/create		rayid			'exec macro/hist#rayid'
+
+alias/create		wirep			'exec macro/hist#wirep'
+alias/create		nclustp		'exec macro/hist#nclustp'
+alias/create		nhitp			'exec macro/hist#nhitp'
+alias/create		posp			'exec macro/hist#posp'
+alias/create		posidp		'exec macro/hist#posidp'
+alias/create		rayp			'exec macro/hist#rayp'
+alias/create		rayidp		'exec macro/hist#rayidp'
+
+alias/create		vertex		'exec macro/hist#vertex'
+alias/create		scat			'exec macro/hist#scat'
+alias/create		x					'exec macro/hist#x'
+alias/create		y					'exec macro/hist#y'
+alias/create		gradx			'exec macro/hist#gradx'
+alias/create		grady			'exec macro/hist#grady'
+alias/create		xv				'exec macro/hist#xv'
+alias/create		yv				'exec macro/hist#yv'
+alias/create		xp				'exec macro/hist#xp'
+alias/create		yp				'exec macro/hist#yp'
+alias/create		ex				'exec macro/hist#ex'
+
+alias/create    hadc      'exec macro/hist#hadc'
+alias/create    htdc      'exec macro/hist#htdc'
+alias/create    hde       'exec macro/hist#hde'
+alias/create    htpos     'exec macro/hist#htpos'

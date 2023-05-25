@@ -1,0 +1,119 @@
+Macro fit id=1000 low=1.8 high=2.5
+
+tmpid=1341
+
+if [low].GE.[high] then
+  mess Illeagal fitting range.
+  stopm
+endif
+
+if $vexist(fpar) then
+  vec/del fpar
+endif
+
+if $vexist(fepar) then
+  vec/del fepar
+endif
+
+if $hexist([tmpid]) then
+   mess hisgram([tmpid]) exist.
+   stopm
+endif
+
+if $hexist([id]).NE.1  then
+   mess Unknown hisgram([id]).
+   stopm
+endif
+
+vec/cre fpar(3)
+vec/cre fepar(3)
+
+if $vexist(hcont) then
+   vec/del hcont
+endif
+
+if $vexist(herr) then
+   vec/del herr
+endif
+
+if $vexist(hnabs) then
+   vec/del hnabs
+endif
+
+if $vexist(hncont) then
+   vec/del hncont
+endif
+
+if $vexist(hnerr) then
+   vec/del hnerr
+endif
+
+if $vexist(hfitt) then
+   vec/del hfitt
+endif
+
+if $vexist(hfitd) then
+   vec/del hfitd
+endif
+
+xbins=$hinfo([id],xbins)
+xmin=$hinfo([id],xmin)
+xmax=$hinfo([id],xmax)
+binsize=([xmax]-[xmin])/[xbins]
+
+xsbin=$sigma(int(([low]-[xmin])/[binsize]))+1
+xebin=$sigma(int(([high]-[xmin])/[binsize]))
+xnbins=[xebin]-[xsbin]+1
+xnmin=[xmin]+[binsize]*([xsbin]-1)
+xnmax=[xmin]+[binsize]*[xebin]
+
+
+if [xsbin]<1 then
+ mess Too small lower limit.
+ stopm
+endif
+
+if [xebin] > [xbins]  then
+ mess Too large upper limit.
+ stopm
+endif
+
+vec/cre hcont([xbins])
+vec/cre herr([xbins])
+
+h/get/cont [id] hcont
+h/get/err [id] herr
+
+vec/copy hcont([xsbin]:[xebin]) hncont
+vec/copy herr([xsbin]:[xebin]) hnerr
+vec/cre hnabs([xnbins])
+
+sum=$sigma(vsum(hncont))
+
+mess [xnbins] [xnmin] [xnmax]
+
+
+h/cre/1d [tmpid] $htitle([id]) [xnbins] [xnmin] [xnmax]
+h/put/cont [tmpid] hncont
+h/put/err [tmpid] hnerr
+h/get/abs [tmpid] hnabs
+
+h/fit [tmpid] g ! 0 fpar ! ! ! fepar
+
+sigma hfitt=fpar(1)*exp(-0.5*((hnabs-fpar(2))/fpar(3))**2)
+sigma hfittd=hncont-hfitt
+chi=$sigma(vsum((hfittd/hnerr)**2)/[xnbins])
+
+fwhm=2.35482*fpar(3)*1000.
+yield=fpar(1)*fpar(3)*2.5066283/[binsize]
+yielde=$sigma(sqrt((fpar(1)*fepar(3))**2+(fpar(3)*fepar(1))**2))
+yielde2=[yielde]*2.5066283/[binsize]
+
+h/del [tmpid]
+
+mess from [low] to [high]
+mess from ch.[xsbin] to ch.[xebin]
+mess yield:[yield] +- [yielde2]
+mess sum  :[sum]
+mess FWHM :[fwhm] keV
+mess chi  :[chi]

@@ -1,0 +1,14 @@
+void vectadd(double *u, double *v, double *x);
+void vectsub(double *u, double *v, double *x);
+void *vectlin(double a, double *u, double *x);
+void *vectconb(double a, double *u, double b, double *v, double *x);
+double vectscpro(double *u,double *v);
+void vectunit(double *u);
+double vectvecpro(double *u,double *v,double *x);
+double vectangle(double *u, double *v);
+void vectprojx(double *u, double *x);
+void vectprojy(double *u, double *x);
+double scangle_x(double *u);
+double scangle_y(double *u);
+double fppangle_x(double *fpvec,double *fppvec);
+double fppangle_y(double *fpvec,double *fppvec);

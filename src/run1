@@ -1,0 +1,10 @@
+./anagr -b 48k -rp dummy.rp /np1a/v05/e370/data/bld/run$1.bld hb/run$1.hb
+cp drift.template drift.kumac
+sed -i "s/RUN/$1/" drift.kumac
+paw -b drift.kumac -w 0 
+./anagr -b 48k -rp dummy.rp /np1a/v05/e370/data/bld/run$1.bld hb/run$1.hb
+h2root hb/run$1.hb root/run$1.root
+cd root
+echo "run$1.root" > input
+./h700 < input
+mv result.root res$1.root

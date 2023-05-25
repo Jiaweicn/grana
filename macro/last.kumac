@@ -1,0 +1,20 @@
+*** Begin of history file: Fri Nov  5 17:18:49 2010
+glob test
+h/pl 94
+exe ../macro/vdccalib 94 95 335 grfx.tbl
+sh
+exe ../macro/vdccalib 94 95 335 grfx.tbl
+sh
+exe ../macro/vdccalib 94 95 335 grfx.tbl
+sh
+h/pl 94
+h/pl 94(:400.)
+exe ../macro/vdccalib 94 95 335 grfx.tbl
+h/pl 95(:400.)
+exe ../macro/vdccalib 95 95 330 grfu.tbl
+h/pl 96(:400.)
+exe ../macro/vdccalib 96 95 320 grrx.tbl
+h/pl 97(:400.)
+exe ../macro/vdccalib 97 90 320 grru.tbl
+q
+*** End   of history file: Fri Nov  5 17:23:55 2010

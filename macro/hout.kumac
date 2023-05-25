@@ -1,0 +1,41 @@
+Macro hout id=1 file=temp.hst 
+vec/cre hist1(3500)
+hi/get/cont [id]   hist1
+vec/write hist1 [file] (F10.0)
+vec/del hist1
+RETURN
+
+Macro hout4 id1=1 file=temp.hst 
+vec/cre hist1(3500)
+vec/cre hist2(3500)
+vec/cre hist3(3500)
+vec/cre hist4(3500)
+id = [id1]
+hi/get/cont [id]   hist1
+id = [id1]+1
+hi/get/cont [id]   hist2
+id = [id1]+2
+hi/get/cont [id]   hist3
+id = [id1]+3
+hi/get/cont [id]   hist4
+vec/write hist1,hist2,hist3,hist4 [file] 4(F10.0)
+vec/del hist1,hist2,hist3,hist4
+RETURN
+
+Macro wtdc id1=1 file=wtdc.hst 
+vec/cre hist1(1024)
+vec/cre hist2(1024)
+vec/cre hist3(1024)
+vec/cre hist4(1024)
+id = [id1]
+hi/get/cont [id]   hist1
+id = [id1]+1
+hi/get/cont [id]   hist2
+id = [id1]+2
+hi/get/cont [id]   hist3
+id = [id1]+3
+hi/get/cont [id]   hist4
+vec/write hist1,hist2,hist3,hist4 [file] 4(F10.0)
+vec/del hist1,hist2,hist3,hist4
+RETURN
+

@@ -1,0 +1,675 @@
+##UNF##
+m1= 3728.43  m2=22342.07  m3= 3728.43 (z3= 2.0)  m4=22342.07
+K1=206.0  GRANG=  0.0  BGR= 664.300   RHO=3.01016   dp/dx=-6.4808e-05
+Y_TGT=  0.00 mm  DEX[0]= -0.20  DEX[1]=  1.02
+GR_RFC1=260.00   GR_RFC2=775.00  GR_RFW= 50.00
+GR_YP_L= -2.00   GR_YP_H=  2.00
+GR_YB1_L= -4.00  GR_YB1_H= -2.00  GR_YB2_L=  2.00  GR_YB2_H=  4.00
+GR_MODE=UNF
+GR_PID1_L=130.00   GR_PID1_H=300.00
+hbookfile:run2003.hb
+#################################
+Run Start Block.(0)
+Wed Nov 16 15:55:32 2011
+run2003	
+#################################
+b 1:I cannot find blockheader in the head of block!
+b 1:I cannot find blockheader in the head of block!
+Inconsistent Block Number! read:4 th  count:2 th
+b 5:I cannot find blockheader in the head of block!
+b 5:I cannot find blockheader in the head of block!
+Inconsistent Block Number! read:8 th  count:6 th
+b 9:I cannot find blockheader in the head of block!
+b 9:I cannot find blockheader in the head of block!
+Inconsistent Block Number! read:12 th  count:10 th
+b 13:I cannot find blockheader in the head of block!
+b 13:I cannot find blockheader in the head of block!
+Inconsistent Block Number! read:16 th  count:14 th
+b 17:I cannot find blockheader in the head of block!
+b 17:I cannot find blockheader in the head of block!
+Inconsistent Block Number! read:20 th  count:18 th
+b 21:I cannot find blockheader in the head of block!
+b 21:I cannot find blockheader in the head of block!
+Inconsistent Block Number! read:24 th  count:22 th
+b 25:I cannot find blockheader in the head of block!
+b 25:I cannot find blockheader in the head of block!
+Inconsistent Block Number! read:28 th  count:26 th
+b 29:I cannot find blockheader in the head of block!
+b 29:I cannot find blockheader in the head of block!
+Inconsistent Block Number! read:32 th  count:30 th
+b 33:I cannot find blockheader in the head of block!
+b 33:I cannot find blockheader in the head of block!
+Inconsistent Block Number! read:36 th  count:34 th
+b 37:I cannot find blockheader in the head of block!
+b 37:I cannot find blockheader in the head of block!
+Inconsistent Block Number! read:40 th  count:38 th
+b 41:I cannot find blockheader in the head of block!
+b 41:I cannot find blockheader in the head of block!
+Inconsistent Block Number! read:44 th  count:42 th
+b 45:I cannot find blockheader in the head of block!
+b 45:I cannot find blockheader in the head of block!
+Inconsistent Block Number! read:48 th  count:46 th
+b 49:I cannot find blockheader in the head of block!
+b 49:I cannot find blockheader in the head of block!
+Inconsistent Block Number! read:52 th  count:50 th
+b 53:I cannot find blockheader in the head of block!
+b 53:I cannot find blockheader in the head of block!
+Inconsistent Block Number! read:56 th  count:54 th
+b 57:I cannot find blockheader in the head of block!
+b 57:I cannot find blockheader in the head of block!
+Inconsistent Block Number! read:60 th  count:58 th
+b 61:I cannot find blockheader in the head of block!
+b 61:I cannot find blockheader in the head of block!
+Inconsistent Block Number! read:64 th  count:62 th
+b 65:I cannot find blockheader in the head of block!
+b 65:I cannot find blockheader in the head of block!
+Inconsistent Block Number! read:68 th  count:66 th
+b 69:I cannot find blockheader in the head of block!
+b 69:I cannot find blockheader in the head of block!
+Inconsistent Block Number! read:72 th  count:70 th
+b 73:I cannot find blockheader in the head of block!
+b 73:I cannot find blockheader in the head of block!
+Inconsistent Block Number! read:76 th  count:74 th
+b 77:I cannot find blockheader in the head of block!
+b 77:I cannot find blockheader in the head of block!
+Inconsistent Block Number! read:80 th  count:78 th
+b 81:I cannot find blockheader in the head of block!
+b 81:I cannot find blockheader in the head of block!
+Inconsistent Block Number! read:84 th  count:82 th
+b 85:I cannot find blockheader in the head of block!
+b 85:I cannot find blockheader in the head of block!
+Inconsistent Block Number! read:88 th  count:86 th
+b 89:I cannot find blockheader in the head of block!
+b 89:I cannot find blockheader in the head of block!
+Inconsistent Block Number! read:92 th  count:90 th
+b 93:I cannot find blockheader in the head of block!
+b 93:I cannot find blockheader in the head of block!
+Inconsistent Block Number! read:96 th  count:94 th
+b 97:I cannot find blockheader in the head of block!
+b 97:I cannot find blockheader in the head of block!
+Inconsistent Block Number! read:100 th  count:98 th
+b 101:I cannot find blockheader in the head of block!
+b 101:I cannot find blockheader in the head of block!
+Inconsistent Block Number! read:104 th  count:102 th
+b 105:I cannot find blockheader in the head of block!
+b 105:I cannot find blockheader in the head of block!
+Inconsistent Block Number! read:108 th  count:106 th
+b 109:I cannot find blockheader in the head of block!
+b 109:I cannot find blockheader in the head of block!
+Inconsistent Block Number! read:112 th  count:110 th
+b 113:I cannot find blockheader in the head of block!
+b 113:I cannot find blockheader in the head of block!
+Inconsistent Block Number! read:116 th  count:114 th
+b 117:I cannot find blockheader in the head of block!
+b 117:I cannot find blockheader in the head of block!
+Inconsistent Block Number! read:120 th  count:118 th
+b 121:I cannot find blockheader in the head of block!
+b 121:I cannot find blockheader in the head of block!
+Inconsistent Block Number! read:124 th  count:122 th
+b 125:I cannot find blockheader in the head of block!
+b 125:I cannot find blockheader in the head of block!
+Inconsistent Block Number! read:128 th  count:126 th
+b 129:I cannot find blockheader in the head of block!
+b 129:I cannot find blockheader in the head of block!
+Inconsistent Block Number! read:132 th  count:130 th
+b 133:I cannot find blockheader in the head of block!
+b 133:I cannot find blockheader in the head of block!
+Inconsistent Block Number! read:136 th  count:134 th
+b 137:I cannot find blockheader in the head of block!
+b 137:I cannot find blockheader in the head of block!
+Inconsistent Block Number! read:140 th  count:138 th
+b 141:I cannot find blockheader in the head of block!
+b 141:I cannot find blockheader in the head of block!
+Inconsistent Block Number! read:144 th  count:142 th
+b 145:I cannot find blockheader in the head of block!
+b 145:I cannot find blockheader in the head of block!
+Inconsistent Block Number! read:148 th  count:146 th
+b 149:I cannot find blockheader in the head of block!
+b 149:I cannot find blockheader in the head of block!
+Inconsistent Block Number! read:152 th  count:150 th
+b 153:I cannot find blockheader in the head of block!
+b 153:I cannot find blockheader in the head of block!
+Inconsistent Block Number! read:156 th  count:154 th
+b 157:I cannot find blockheader in the head of block!
+b 157:I cannot find blockheader in the head of block!
+Inconsistent Block Number! read:160 th  count:158 th
+b 161:I cannot find blockheader in the head of block!
+b 161:I cannot find blockheader in the head of block!
+Inconsistent Block Number! read:164 th  count:162 th
+b 165:I cannot find blockheader in the head of block!
+b 165:I cannot find blockheader in the head of block!
+Inconsistent Block Number! read:168 th  count:166 th
+b 169:I cannot find blockheader in the head of block!
+b 169:I cannot find blockheader in the head of block!
+Inconsistent Block Number! read:172 th  count:170 th
+b 173:I cannot find blockheader in the head of block!
+b 173:I cannot find blockheader in the head of block!
+Inconsistent Block Number! read:176 th  count:174 th
+b 177:I cannot find blockheader in the head of block!
+b 177:I cannot find blockheader in the head of block!
+Inconsistent Block Number! read:180 th  count:178 th
+b 181:I cannot find blockheader in the head of block!
+b 181:I cannot find blockheader in the head of block!
+Inconsistent Block Number! read:184 th  count:182 th
+b 185:I cannot find blockheader in the head of block!
+b 185:I cannot find blockheader in the head of block!
+Inconsistent Block Number! read:188 th  count:186 th
+b 189:I cannot find blockheader in the head of block!
+b 189:I cannot find blockheader in the head of block!
+Inconsistent Block Number! read:192 th  count:190 th
+b 193:I cannot find blockheader in the head of block!
+b 193:I cannot find blockheader in the head of block!
+Inconsistent Block Number! read:196 th  count:194 th
+b 197:I cannot find blockheader in the head of block!
+b 197:I cannot find blockheader in the head of block!
+Inconsistent Block Number! read:200 th  count:198 th
+b 201:I cannot find blockheader in the head of block!
+b 201:I cannot find blockheader in the head of block!
+Inconsistent Block Number! read:204 th  count:202 th
+b 205:I cannot find blockheader in the head of block!
+b 205:I cannot find blockheader in the head of block!
+Inconsistent Block Number! read:208 th  count:206 th
+b 209:I cannot find blockheader in the head of block!
+b 209:I cannot find blockheader in the head of block!
+Inconsistent Block Number! read:212 th  count:210 th
+b 213:I cannot find blockheader in the head of block!
+b 213:I cannot find blockheader in the head of block!
+Inconsistent Block Number! read:216 th  count:214 th
+b 217:I cannot find blockheader in the head of block!
+b 217:I cannot find blockheader in the head of block!
+Inconsistent Block Number! read:220 th  count:218 th
+b 221:I cannot find blockheader in the head of block!
+b 221:I cannot find blockheader in the head of block!
+Inconsistent Block Number! read:224 th  count:222 th
+b 225:I cannot find blockheader in the head of block!
+b 225:I cannot find blockheader in the head of block!
+Inconsistent Block Number! read:228 th  count:226 th
+b 229:I cannot find blockheader in the head of block!
+b 229:I cannot find blockheader in the head of block!
+Inconsistent Block Number! read:232 th  count:230 th
+b 233:I cannot find blockheader in the head of block!
+b 233:I cannot find blockheader in the head of block!
+Inconsistent Block Number! read:236 th  count:234 th
+b 237:I cannot find blockheader in the head of block!
+b 237:I cannot find blockheader in the head of block!
+Inconsistent Block Number! read:240 th  count:238 th
+b 241:I cannot find blockheader in the head of block!
+b 241:I cannot find blockheader in the head of block!
+Inconsistent Block Number! read:244 th  count:242 th
+b 245:I cannot find blockheader in the head of block!
+b 245:I cannot find blockheader in the head of block!
+Inconsistent Block Number! read:248 th  count:246 th
+b 249:I cannot find blockheader in the head of block!
+b 249:I cannot find blockheader in the head of block!
+Inconsistent Block Number! read:252 th  count:250 th
+b 253:I cannot find blockheader in the head of block!
+b 253:I cannot find blockheader in the head of block!
+Inconsistent Block Number! read:256 th  count:254 th
+b 257:I cannot find blockheader in the head of block!
+b 257:I cannot find blockheader in the head of block!
+Inconsistent Block Number! read:260 th  count:258 th
+b 261:I cannot find blockheader in the head of block!
+b 261:I cannot find blockheader in the head of block!
+Inconsistent Block Number! read:264 th  count:262 th
+b 265:I cannot find blockheader in the head of block!
+b 265:I cannot find blockheader in the head of block!
+Inconsistent Block Number! read:268 th  count:266 th
+b 269:I cannot find blockheader in the head of block!
+b 269:I cannot find blockheader in the head of block!
+Inconsistent Block Number! read:272 th  count:270 th
+b 273:I cannot find blockheader in the head of block!
+b 273:I cannot find blockheader in the head of block!
+Inconsistent Block Number! read:276 th  count:274 th
+b 277:I cannot find blockheader in the head of block!
+b 277:I cannot find blockheader in the head of block!
+Inconsistent Block Number! read:280 th  count:278 th
+b 281:I cannot find blockheader in the head of block!
+b 281:I cannot find blockheader in the head of block!
+Inconsistent Block Number! read:284 th  count:282 th
+b 285:I cannot find blockheader in the head of block!
+b 285:I cannot find blockheader in the head of block!
+Inconsistent Block Number! read:288 th  count:286 th
+b 289:I cannot find blockheader in the head of block!
+b 289:I cannot find blockheader in the head of block!
+Inconsistent Block Number! read:292 th  count:290 th
+b 293:I cannot find blockheader in the head of block!
+b 293:I cannot find blockheader in the head of block!
+Inconsistent Block Number! read:296 th  count:294 th
+b 297:I cannot find blockheader in the head of block!
+b 297:I cannot find blockheader in the head of block!
+Inconsistent Block Number! read:300 th  count:298 th
+b 301:I cannot find blockheader in the head of block!
+b 301:I cannot find blockheader in the head of block!
+Inconsistent Block Number! read:304 th  count:302 th
+b 305:I cannot find blockheader in the head of block!
+b 305:I cannot find blockheader in the head of block!
+Inconsistent Block Number! read:308 th  count:306 th
+b 309:I cannot find blockheader in the head of block!
+b 309:I cannot find blockheader in the head of block!
+Inconsistent Block Number! read:312 th  count:310 th
+b 313:I cannot find blockheader in the head of block!
+b 313:I cannot find blockheader in the head of block!
+Inconsistent Block Number! read:316 th  count:314 th
+b 317:I cannot find blockheader in the head of block!
+b 317:I cannot find blockheader in the head of block!
+Inconsistent Block Number! read:320 th  count:318 th
+b 321:I cannot find blockheader in the head of block!
+b 321:I cannot find blockheader in the head of block!
+Inconsistent Block Number! read:324 th  count:322 th
+b 325:I cannot find blockheader in the head of block!
+b 325:I cannot find blockheader in the head of block!
+Inconsistent Block Number! read:328 th  count:326 th
+b 329:I cannot find blockheader in the head of block!
+b 329:I cannot find blockheader in the head of block!
+Inconsistent Block Number! read:332 th  count:330 th
+b 333:I cannot find blockheader in the head of block!
+b 333:I cannot find blockheader in the head of block!
+Inconsistent Block Number! read:336 th  count:334 th
+b 337:I cannot find blockheader in the head of block!
+b 337:I cannot find blockheader in the head of block!
+Inconsistent Block Number! read:340 th  count:338 th
+b 341:I cannot find blockheader in the head of block!
+b 341:I cannot find blockheader in the head of block!
+Inconsistent Block Number! read:344 th  count:342 th
+b 345:I cannot find blockheader in the head of block!
+b 345:I cannot find blockheader in the head of block!
+Inconsistent Block Number! read:348 th  count:346 th
+b 349:I cannot find blockheader in the head of block!
+b 349:I cannot find blockheader in the head of block!
+Inconsistent Block Number! read:352 th  count:350 th
+b 353:I cannot find blockheader in the head of block!
+b 353:I cannot find blockheader in the head of block!
+Inconsistent Block Number! read:356 th  count:354 th
+b 357:I cannot find blockheader in the head of block!
+b 357:I cannot find blockheader in the head of block!
+Inconsistent Block Number! read:360 th  count:358 th
+b 361:I cannot find blockheader in the head of block!
+b 361:I cannot find blockheader in the head of block!
+Inconsistent Block Number! read:364 th  count:362 th
+b 365:I cannot find blockheader in the head of block!
+b 365:I cannot find blockheader in the head of block!
+Inconsistent Block Number! read:368 th  count:366 th
+b 369:I cannot find blockheader in the head of block!
+b 369:I cannot find blockheader in the head of block!
+Inconsistent Block Number! read:372 th  count:370 th
+b 373:I cannot find blockheader in the head of block!
+b 373:I cannot find blockheader in the head of block!
+Inconsistent Block Number! read:376 th  count:374 th
+b 377:I cannot find blockheader in the head of block!
+b 377:I cannot find blockheader in the head of block!
+Inconsistent Block Number! read:380 th  count:378 th
+b 381:I cannot find blockheader in the head of block!
+b 381:I cannot find blockheader in the head of block!
+Inconsistent Block Number! read:384 th  count:382 th
+b 385:I cannot find blockheader in the head of block!
+b 385:I cannot find blockheader in the head of block!
+Inconsistent Block Number! read:388 th  count:386 th
+b 389:I cannot find blockheader in the head of block!
+b 389:I cannot find blockheader in the head of block!
+Inconsistent Block Number! read:392 th  count:390 th
+b 393:I cannot find blockheader in the head of block!
+b 393:I cannot find blockheader in the head of block!
+Inconsistent Block Number! read:396 th  count:394 th
+b 397:I cannot find blockheader in the head of block!
+b 397:I cannot find blockheader in the head of block!
+Inconsistent Block Number! read:400 th  count:398 th
+b 401:I cannot find blockheader in the head of block!
+b 401:I cannot find blockheader in the head of block!
+Inconsistent Block Number! read:404 th  count:402 th
+b 405:I cannot find blockheader in the head of block!
+b 405:I cannot find blockheader in the head of block!
+Inconsistent Block Number! read:408 th  count:406 th
+b 409:I cannot find blockheader in the head of block!
+b 409:I cannot find blockheader in the head of block!
+Inconsistent Block Number! read:412 th  count:410 th
+b 413:I cannot find blockheader in the head of block!
+b 413:I cannot find blockheader in the head of block!
+Inconsistent Block Number! read:416 th  count:414 th
+b 417:I cannot find blockheader in the head of block!
+b 417:I cannot find blockheader in the head of block!
+Inconsistent Block Number! read:420 th  count:418 th
+b 421:I cannot find blockheader in the head of block!
+b 421:I cannot find blockheader in the head of block!
+Inconsistent Block Number! read:424 th  count:422 th
+b 425:I cannot find blockheader in the head of block!
+b 425:I cannot find blockheader in the head of block!
+Inconsistent Block Number! read:428 th  count:426 th
+b 429:I cannot find blockheader in the head of block!
+b 429:I cannot find blockheader in the head of block!
+Inconsistent Block Number! read:432 th  count:430 th
+b 433:I cannot find blockheader in the head of block!
+b 433:I cannot find blockheader in the head of block!
+Inconsistent Block Number! read:436 th  count:434 th
+b 437:I cannot find blockheader in the head of block!
+b 437:I cannot find blockheader in the head of block!
+Inconsistent Block Number! read:440 th  count:438 th
+b 441:I cannot find blockheader in the head of block!
+b 441:I cannot find blockheader in the head of block!
+Inconsistent Block Number! read:444 th  count:442 th
+b 445:I cannot find blockheader in the head of block!
+b 445:I cannot find blockheader in the head of block!
+Inconsistent Block Number! read:448 th  count:446 th
+b 449:I cannot find blockheader in the head of block!
+b 449:I cannot find blockheader in the head of block!
+Inconsistent Block Number! read:452 th  count:450 th
+b 453:I cannot find blockheader in the head of block!
+b 453:I cannot find blockheader in the head of block!
+Inconsistent Block Number! read:456 th  count:454 th
+b 457:I cannot find blockheader in the head of block!
+b 457:I cannot find blockheader in the head of block!
+Inconsistent Block Number! read:460 th  count:458 th
+b 461:I cannot find blockheader in the head of block!
+b 461:I cannot find blockheader in the head of block!
+Inconsistent Block Number! read:464 th  count:462 th
+b 465:I cannot find blockheader in the head of block!
+b 465:I cannot find blockheader in the head of block!
+Inconsistent Block Number! read:468 th  count:466 th
+b 469:I cannot find blockheader in the head of block!
+b 469:I cannot find blockheader in the head of block!
+Inconsistent Block Number! read:472 th  count:470 th
+b 473:I cannot find blockheader in the head of block!
+b 473:I cannot find blockheader in the head of block!
+Inconsistent Block Number! read:476 th  count:474 th
+b 477:I cannot find blockheader in the head of block!
+b 477:I cannot find blockheader in the head of block!
+Inconsistent Block Number! read:480 th  count:478 th
+b 481:I cannot find blockheader in the head of block!
+b 481:I cannot find blockheader in the head of block!
+Inconsistent Block Number! read:484 th  count:482 th
+b 485:I cannot find blockheader in the head of block!
+b 485:I cannot find blockheader in the head of block!
+Inconsistent Block Number! read:488 th  count:486 th
+b 489:I cannot find blockheader in the head of block!
+b 489:I cannot find blockheader in the head of block!
+Inconsistent Block Number! read:492 th  count:490 th
+b 493:I cannot find blockheader in the head of block!
+b 493:I cannot find blockheader in the head of block!
+Inconsistent Block Number! read:496 th  count:494 th
+b 497:I cannot find blockheader in the head of block!
+b 497:I cannot find blockheader in the head of block!
+Inconsistent Block Number! read:500 th  count:498 th
+b 501:I cannot find blockheader in the head of block!
+b 501:I cannot find blockheader in the head of block!
+Inconsistent Block Number! read:504 th  count:502 th
+b 505:I cannot find blockheader in the head of block!
+b 505:I cannot find blockheader in the head of block!
+Inconsistent Block Number! read:508 th  count:506 th
+b 509:I cannot find blockheader in the head of block!
+b 509:I cannot find blockheader in the head of block!
+Inconsistent Block Number! read:512 th  count:510 th
+b 513:I cannot find blockheader in the head of block!
+b 513:I cannot find blockheader in the head of block!
+Inconsistent Block Number! read:516 th  count:514 th
+b 517:I cannot find blockheader in the head of block!
+b 517:I cannot find blockheader in the head of block!
+Inconsistent Block Number! read:520 th  count:518 th
+b 521:I cannot find blockheader in the head of block!
+b 521:I cannot find blockheader in the head of block!
+Inconsistent Block Number! read:524 th  count:522 th
+b 525:I cannot find blockheader in the head of block!
+b 525:I cannot find blockheader in the head of block!
+Inconsistent Block Number! read:528 th  count:526 th
+b 529:I cannot find blockheader in the head of block!
+b 529:I cannot find blockheader in the head of block!
+Inconsistent Block Number! read:532 th  count:530 th
+b 533:I cannot find blockheader in the head of block!
+b 533:I cannot find blockheader in the head of block!
+Inconsistent Block Number! read:536 th  count:534 th
+b 537:I cannot find blockheader in the head of block!
+b 537:I cannot find blockheader in the head of block!
+Inconsistent Block Number! read:540 th  count:538 th
+b 541:I cannot find blockheader in the head of block!
+b 541:I cannot find blockheader in the head of block!
+Inconsistent Block Number! read:544 th  count:542 th
+b 545:I cannot find blockheader in the head of block!
+b 545:I cannot find blockheader in the head of block!
+Inconsistent Block Number! read:548 th  count:546 th
+b 549:I cannot find blockheader in the head of block!
+b 549:I cannot find blockheader in the head of block!
+Inconsistent Block Number! read:552 th  count:550 th
+b 553:I cannot find blockheader in the head of block!
+b 553:I cannot find blockheader in the head of block!
+Inconsistent Block Number! read:556 th  count:554 th
+b 557:I cannot find blockheader in the head of block!
+b 557:I cannot find blockheader in the head of block!
+Inconsistent Block Number! read:560 th  count:558 th
+b 561:I cannot find blockheader in the head of block!
+b 561:I cannot find blockheader in the head of block!
+Inconsistent Block Number! read:564 th  count:562 th
+b 565:I cannot find blockheader in the head of block!
+b 565:I cannot find blockheader in the head of block!
+Inconsistent Block Number! read:568 th  count:566 th
+b 569:I cannot find blockheader in the head of block!
+b 569:I cannot find blockheader in the head of block!
+Inconsistent Block Number! read:572 th  count:570 th
+b 573:I cannot find blockheader in the head of block!
+b 573:I cannot find blockheader in the head of block!
+Inconsistent Block Number! read:576 th  count:574 th
+b 577:I cannot find blockheader in the head of block!
+b 577:I cannot find blockheader in the head of block!
+Inconsistent Block Number! read:580 th  count:578 th
+b 581:I cannot find blockheader in the head of block!
+b 581:I cannot find blockheader in the head of block!
+Inconsistent Block Number! read:584 th  count:582 th
+b 585:I cannot find blockheader in the head of block!
+b 585:I cannot find blockheader in the head of block!
+Inconsistent Block Number! read:588 th  count:586 th
+b 589:I cannot find blockheader in the head of block!
+b 589:I cannot find blockheader in the head of block!
+Inconsistent Block Number! read:592 th  count:590 th
+b 593:I cannot find blockheader in the head of block!
+b 593:I cannot find blockheader in the head of block!
+Inconsistent Block Number! read:596 th  count:594 th
+b 597:I cannot find blockheader in the head of block!
+b 597:I cannot find blockheader in the head of block!
+Inconsistent Block Number! read:600 th  count:598 th
+b 601:I cannot find blockheader in the head of block!
+b 601:I cannot find blockheader in the head of block!
+Inconsistent Block Number! read:604 th  count:602 th
+b 605:I cannot find blockheader in the head of block!
+b 605:I cannot find blockheader in the head of block!
+Inconsistent Block Number! read:608 th  count:606 th
+b 609:I cannot find blockheader in the head of block!
+b 609:I cannot find blockheader in the head of block!
+Inconsistent Block Number! read:612 th  count:610 th
+b 613:I cannot find blockheader in the head of block!
+b 613:I cannot find blockheader in the head of block!
+Inconsistent Block Number! read:616 th  count:614 th
+b 617:I cannot find blockheader in the head of block!
+b 617:I cannot find blockheader in the head of block!
+Inconsistent Block Number! read:620 th  count:618 th
+b 621:I cannot find blockheader in the head of block!
+b 621:I cannot find blockheader in the head of block!
+Inconsistent Block Number! read:624 th  count:622 th
+b 625:I cannot find blockheader in the head of block!
+b 625:I cannot find blockheader in the head of block!
+Inconsistent Block Number! read:628 th  count:626 th
+b 629:I cannot find blockheader in the head of block!
+b 629:I cannot find blockheader in the head of block!
+Inconsistent Block Number! read:632 th  count:630 th
+b 633:I cannot find blockheader in the head of block!
+b 633:I cannot find blockheader in the head of block!
+Inconsistent Block Number! read:636 th  count:634 th
+b 637:I cannot find blockheader in the head of block!
+b 637:I cannot find blockheader in the head of block!
+Inconsistent Block Number! read:640 th  count:638 th
+b 641:I cannot find blockheader in the head of block!
+b 641:I cannot find blockheader in the head of block!
+Inconsistent Block Number! read:644 th  count:642 th
+b 645:I cannot find blockheader in the head of block!
+b 645:I cannot find blockheader in the head of block!
+Inconsistent Block Number! read:648 th  count:646 th
+b 649:I cannot find blockheader in the head of block!
+b 649:I cannot find blockheader in the head of block!
+Inconsistent Block Number! read:652 th  count:650 th
+b 653:I cannot find blockheader in the head of block!
+b 653:I cannot find blockheader in the head of block!
+Inconsistent Block Number! read:656 th  count:654 th
+b 657:I cannot find blockheader in the head of block!
+b 657:I cannot find blockheader in the head of block!
+Inconsistent Block Number! read:660 th  count:658 th
+b 661:I cannot find blockheader in the head of block!
+b 661:I cannot find blockheader in the head of block!
+Inconsistent Block Number! read:664 th  count:662 th
+b 665:I cannot find blockheader in the head of block!
+b 665:I cannot find blockheader in the head of block!
+Inconsistent Block Number! read:668 th  count:666 th
+b 669:I cannot find blockheader in the head of block!
+b 669:I cannot find blockheader in the head of block!
+Inconsistent Block Number! read:672 th  count:670 th
+b 673:I cannot find blockheader in the head of block!
+b 673:I cannot find blockheader in the head of block!
+Inconsistent Block Number! read:676 th  count:674 th
+b 677:I cannot find blockheader in the head of block!
+b 677:I cannot find blockheader in the head of block!
+Inconsistent Block Number! read:680 th  count:678 th
+b 681:I cannot find blockheader in the head of block!
+b 681:I cannot find blockheader in the head of block!
+Inconsistent Block Number! read:684 th  count:682 th
+b 685:I cannot find blockheader in the head of block!
+b 685:I cannot find blockheader in the head of block!
+Inconsistent Block Number! read:688 th  count:686 th
+b 689:I cannot find blockheader in the head of block!
+b 689:I cannot find blockheader in the head of block!
+Inconsistent Block Number! read:692 th  count:690 th
+b 693:I cannot find blockheader in the head of block!
+b 693:I cannot find blockheader in the head of block!
+Inconsistent Block Number! read:696 th  count:694 th
+b 697:I cannot find blockheader in the head of block!
+b 697:I cannot find blockheader in the head of block!
+Inconsistent Block Number! read:700 th  count:698 th
+b 701:I cannot find blockheader in the head of block!
+b 701:I cannot find blockheader in the head of block!
+Inconsistent Block Number! read:704 th  count:702 th
+b 705:I cannot find blockheader in the head of block!
+b 705:I cannot find blockheader in the head of block!
+Inconsistent Block Number! read:708 th  count:706 th
+b 709:I cannot find blockheader in the head of block!
+b 709:I cannot find blockheader in the head of block!
+Inconsistent Block Number! read:712 th  count:710 th
+b 713:I cannot find blockheader in the head of block!
+b 713:I cannot find blockheader in the head of block!
+Inconsistent Block Number! read:716 th  count:714 th
+b 717:I cannot find blockheader in the head of block!
+b 717:I cannot find blockheader in the head of block!
+Inconsistent Block Number! read:720 th  count:718 th
+b 721:I cannot find blockheader in the head of block!
+b 721:I cannot find blockheader in the head of block!
+Inconsistent Block Number! read:724 th  count:722 th
+b 725:I cannot find blockheader in the head of block!
+b 725:I cannot find blockheader in the head of block!
+Inconsistent Block Number! read:728 th  count:726 th
+b 729:I cannot find blockheader in the head of block!
+b 729:I cannot find blockheader in the head of block!
+Inconsistent Block Number! read:732 th  count:730 th
+b 733:I cannot find blockheader in the head of block!
+b 733:I cannot find blockheader in the head of block!
+Inconsistent Block Number! read:736 th  count:734 th
+b 737:I cannot find blockheader in the head of block!
+b 737:I cannot find blockheader in the head of block!
+Inconsistent Block Number! read:740 th  count:738 th
+b 741:I cannot find blockheader in the head of block!
+b 741:I cannot find blockheader in the head of block!
+Inconsistent Block Number! read:744 th  count:742 th
+b 745:I cannot find blockheader in the head of block!
+b 745:I cannot find blockheader in the head of block!
+Inconsistent Block Number! read:748 th  count:746 th
+b 749:I cannot find blockheader in the head of block!
+b 749:I cannot find blockheader in the head of block!
+Inconsistent Block Number! read:752 th  count:750 th
+b 753:I cannot find blockheader in the head of block!
+b 753:I cannot find blockheader in the head of block!
+Inconsistent Block Number! read:756 th  count:754 th
+b 757:I cannot find blockheader in the head of block!
+b 757:I cannot find blockheader in the head of block!
+Inconsistent Block Number! read:760 th  count:758 th
+b 761:I cannot find blockheader in the head of block!
+b 761:I cannot find blockheader in the head of block!
+Inconsistent Block Number! read:764 th  count:762 th
+b 765:I cannot find blockheader in the head of block!
+b 765:I cannot find blockheader in the head of block!
+Inconsistent Block Number! read:768 th  count:766 th
+b 769:I cannot find blockheader in the head of block!
+b 769:I cannot find blockheader in the head of block!
+Inconsistent Block Number! read:772 th  count:770 th
+b 773:I cannot find blockheader in the head of block!
+b 773:I cannot find blockheader in the head of block!
+Inconsistent Block Number! read:776 th  count:774 th
+b 777:I cannot find blockheader in the head of block!
+b 777:I cannot find blockheader in the head of block!
+Inconsistent Block Number! read:780 th  count:778 th
+b 781:I cannot find blockheader in the head of block!
+b 781:I cannot find blockheader in the head of block!
+Inconsistent Block Number! read:784 th  count:782 th
+b 785:I cannot find blockheader in the head of block!
+b 785:I cannot find blockheader in the head of block!
+Inconsistent Block Number! read:788 th  count:786 th
+b 789:I cannot find blockheader in the head of block!
+b 789:I cannot find blockheader in the head of block!
+Inconsistent Block Number! read:792 th  count:790 th
+b 793:I cannot find blockheader in the head of block!
+b 793:I cannot find blockheader in the head of block!
+Inconsistent Block Number! read:796 th  count:794 th
+b 797:I cannot find blockheader in the head of block!
+b 797:I cannot find blockheader in the head of block!
+Inconsistent Block Number! read:800 th  count:798 th
+b 801:I cannot find blockheader in the head of block!
+b 801:I cannot find blockheader in the head of block!
+Inconsistent Block Number! read:804 th  count:802 th
+b 805:I cannot find blockheader in the head of block!
+b 805:I cannot find blockheader in the head of block!
+Inconsistent Block Number! read:808 th  count:806 th
+b 809:I cannot find blockheader in the head of block!
+b 809:I cannot find blockheader in the head of block!
+Inconsistent Block Number! read:812 th  count:810 th
+b 813:I cannot find blockheader in the head of block!
+b 813:I cannot find blockheader in the head of block!
+Inconsistent Block Number! read:816 th  count:814 th
+b 817:I cannot find blockheader in the head of block!
+b 817:I cannot find blockheader in the head of block!
+Inconsistent Block Number! read:820 th  count:818 th
+b 821:I cannot find blockheader in the head of block!
+b 821:I cannot find blockheader in the head of block!
+Inconsistent Block Number! read:824 th  count:822 th
+b 825:I cannot find blockheader in the head of block!
+b 825:I cannot find blockheader in the head of block!
+Inconsistent Block Number! read:828 th  count:826 th
+b 829:I cannot find blockheader in the head of block!
+b 829:I cannot find blockheader in the head of block!
+Inconsistent Block Number! read:832 th  count:830 th
+b 833:I cannot find blockheader in the head of block!
+b 833:I cannot find blockheader in the head of block!
+Inconsistent Block Number! read:836 th  count:834 th
+b 837:I cannot find blockheader in the head of block!
+b 837:I cannot find blockheader in the head of block!
+Inconsistent Block Number! read:840 th  count:838 th
+I have read 41353216 bytes.
+Block Analyzed:214	Skipped:627
+Event Analyzed:44351
+0
+CPU time = 1.870000 sec
+MWPC hb-error:0 badcham:0 noch:0
+SCALER 0:      193063           0      193063           0
+SCALER 1:       44641           0       44641           0
+SCALER 2:       44106           0       44106           0
+SCALER 3:       44641           0       44641           0
+SCALER 4:           0           0           0           0
+SCALER 5:     2257196           0     2257196           0
+SCALER 6:     2245162           0     2245162           0
+SCALER 7:       44641           0       44641           0
+SCALER 8:       44640           0       44640           0
+SCALER 9:       44641           0       44641           0
+SCALER a:           0           0           0           0
+SCALER b:       44106           0       44106           0
+SCALER c:       44106           0       44106           0
+SCALER d:           0           0           0           0
+SCALER e:       43900           0       43900           0
+SCALER f:       44641           0       44641           0
+
+Efficiency
+GR_FX :0.9569       13284
+GR_FU :0.9135       13915
+GR_RX :0.9502       13378
+GR_RU :0.9032       14074
+
+Analyzing ratio: 25.09

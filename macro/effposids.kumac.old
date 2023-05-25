@@ -1,0 +1,100 @@
+Macro posids  id1=620 id2=! titl=!
+
+tmpid=3223
+
+if [id2].eq.! then
+    id2=[id1]+2
+endif
+
+if $hexist([id1]).eq.0 then
+   hrin [id1]
+   if $hexist([id1]).eq.0 then
+      mess Histgram [id1] does not exist. Exit ...
+      stopm
+   endif
+endif
+
+if $hexist([id2]).eq.1 then
+    mess Histgram [id2] will be removed.
+    wait
+    h/del [id2]
+endif
+
+for nvec in effp ex eff fr re fx fu rx ru rfx rfu rrx rru
+  if $vexist([nvec]) then
+     mess Vector [nvec] will be removed.
+     wait
+     vec/del [nvec]
+  endif
+endfor
+
+xlen=$hinfo([id1],xbins)
+ylen=$hinfo([id1],ybins)
+xmin=$hinfo([id1],xmin)
+xmax=$hinfo([id1],xmax)
+
+if [titl].eq.! then
+   titl=Efficiency
+endif
+
+h/cre/1d [id2] [titl] [xlen] [xmin] [xmax]
+
+vec/cre effp([xlen],[ylen])
+vec/cre ex([xlen])
+
+h/get/cont [id1] effp
+h/get/cont [id1] effp
+h/get/abs  [id2] ex
+
+vec/copy effp(:,1) fr
+vec/copy effp(:,2) re
+vec/copy effp(:,3) fx
+vec/copy effp(:,4) fu
+vec/copy effp(:,5) rx
+vec/copy effp(:,6) ru
+
+sigma rfx=fx/re
+sigma rfxe=rfx*sqrt(1.0/fx+1.0/re)
+sigma rfu=fu/re
+sigma rfue=rfu*sqrt(1.0/fu+1.0/re)
+sigma rrx=rx/fr
+sigma rrxe=rrx*sqrt(1.0/rx+1.0/fr)
+sigma rru=ru/fr
+sigma rrue=rru*sqrt(1.0/ru+1.0/fr)
+sigma eff=rfx*rfu*rrx*rru
+sigma effe=eff*sqrt((rfxe/rfx)**2+(rfue/rfu)**2+(rrxe/rrx)**2+(rrue/rru)**2)
+
+
+*zone 2 2
+null [xmin] [xmax] 0 1
+ci=0
+for nvec in rfx rfu rrx rru
+  ci=[ci]+1
+  set plci [ci]
+  graph [xlen] ex [nvec] l
+endfor
+set plci 1
+wait
+
+
+h/put/cont [id2] eff
+h/put/err  [id2] effe
+
+h/pl [id2] hist
+
+sigma a=vsum(fx)/vsum(re)
+sigma b=vsum(fu)/vsum(re)
+sigma c=vsum(rx)/vsum(fr)
+sigma d=vsum(ru)/vsum(fr)
+
+vec/write a,b,c,d ! 'FX: ',F6.4,2X,'FU: ',F6.4,2X,'RX: ',F6.4,2X,'RU: ',F6.4
+sigma e=a*b*c*d
+vec/write e ! 'Total:',F5.3
+vec/del effp,ex,eff,fr,re,fx,fu,rx,ru,rfx,rfu,rrx,rru
+vec/del rfxe,rfue,rrxe,rrue,effe
+
+
+
+
+
+

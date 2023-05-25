@@ -1,0 +1,20 @@
+# Dummy
+M1      a
+M2      24Mg
+M3      a
+M4      24Mg
+E_LAB   206
+B_GR    664.3
+RHO     3.01016
+DEDXGR  1.0
+GRANG   0.0
+Y_TGT   0.0
+DEX     0.0  1.0
+Z3      2
+GR_MODE UNF
+GR_PID1 130 300
+GR_RFCW 260  775  50
+#GR_RFCW 260  775  2000
+GR_YP  -2  2
+GR_YB  -4 -2  2  4
+DEX   -0.20066 1.0216

@@ -1,0 +1,36 @@
+* project.kumac---PAW macro file
+* Created 18-FEB-1997 by A. Tamii
+*   Get projection of a 2D histgram
+*   Usage:    exec project#bany id xmin xmax
+*   Example:  exec project#bany 203  -100. 0.
+*   Note:     must delete the previous prejection before creating a
+*             new projection.
+
+macro prox  id=1
+  hist/delete [id]
+	h/cre/prox [id]
+	h/project [id]
+	h/pl [id].prox
+return
+
+macro proy  id=1
+  hist/delete [id]
+	h/cre/proy [id]
+	h/project [id]
+	h/pl [id].proy
+return
+
+macro banx  id=1 ymin=1 ymax=2 
+  hist/delete [id]
+	hist/create/banx [id] [ymin] [ymax]
+	hist/project [id]
+	hist/plot	[id].banx
+return
+
+macro bany  id=1 xmin=1 xmax=2 
+  hist/delete [id]
+	hist/create/bany [id] [xmin] [xmax]
+	hist/project [id]
+	hist/plot	[id].bany
+return
+

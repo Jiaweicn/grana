@@ -1,0 +1,16 @@
+# 1238  (Y-tuned)
+M1      a
+M2      12C
+M3      a
+M4      12C
+#E_LAB   403.22
+#RHO     3.02763
+E_LAB   400.42
+RHO     3.01641
+B_GR    960.699
+DEDXGR  1.0
+GRANG   0.0
+Y_TGT   -1.2
+DEX     0.0  1.0
+Z3      2
+GR_MODE UNF

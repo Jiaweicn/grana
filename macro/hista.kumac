@@ -1,0 +1,347 @@
+* For e112(alpha-GMR) experimet 98/04/11	Kawabata Takahiro
+Macro new file=hist.dat
+	close 20
+	hist/delete *
+	hist/file 20 [file]
+RETURN
+
+Macro online sect=test
+	h/hio/global [sect]
+return
+
+
+Macro list
+	mess ' eventid: Event ID'
+	mess 'vdcwirehit: VDC wire hit'
+	mess ' vdctime: VDC drift time'
+	mess '  vdchit: VDC number of hit wires in each cluster'
+	mess ' vdclust: VDC number of clusters in each chamber'	
+	mess 'vdcposid: VDC postion ID'
+	mess 'vdcrayid: VDC raytrace ID'
+	mess '   fppos: Position in Focal Plane'
+	mess '   fpang: Angle in Focal Plane'
+	mess '    fp2d: 2-dim plot in Focal Plane'
+	mess '      rf: Corrected TDC-RF'
+	mess ' pos-ang: Corrected position in F.P. '
+	mess '                             and scattering angle'
+	mess '   thcut: Position cut by theta-x'
+	mess 'th-y-cut: Position cut by theta-x and y-position'
+	mess '      ex: Excitation Energy(after particle-id)'
+	mess '  scinti: Triger Scinti. data'
+	mess 'pcwirehit: MWPC wire hit'
+	mess '   pcpos: MWPC position'
+	mess ' pcposid: MWPC position ID'
+	mess ' pcrayid: MWPC raytrace ID'
+	mess ' slitadc: ADC data from active-slit'
+	mess ' slittdc: TDC data from active-slit'
+	mess ' slitang: Angle profile cut by active-slit'
+	mess '    diff: Difference of position between VDC and PC'
+return
+
+Macro hists
+	exe list
+	wait
+	exec macro/hista#eventid;       wait
+	exec macro/hista#vdcwirehit;	wait
+	exec macro/hista#vdctime;	wait
+	exec macro/hista#vdchit;	wait
+	exec macro/hista#vdcclust;	wait
+	exec macro/hista#vdcposid;	wait
+	exec macro/hista#vdcrayid;	wait
+	exec macro/hista#fppos;		wait
+	exec macro/hista#fpang;		wait
+	exec macro/hista#fp2d;		wait
+	exec macro/hista#rf;		wait
+	exec macro/hista#pos-ang;	wait
+	exec macro/hista#thcut;		wait
+	exec macro/hista#th-y-cut;	wait
+	exec macro/hista#scinti;	wait
+	exec macro/hista#ex;		wait
+	exec macro/hista#pcwirehit;	wait
+	exec macro/hista#pcpos;		wait
+	exec macro/hista#pcposid;	wait
+	exec macro/hista#pcrayid;	wait
+	exec macro/hista#slitadc;	wait
+	exec macro/hista#slittdc;	wait
+	exec macro/hista#slitang;	wait
+	exec macro/hista#diff;		wait
+RETURN
+
+Macro eventid
+	h/pl 1
+	mess ' 1:Spin down'
+	mess ' 2:Spin up'
+	mess ' 3:Hata out (CV)'
+	mess ' 4:Hata out (WN)'
+	mess ' 5:GR FP event'
+	mess ' 6:'
+	mess ' 7:LAS FP event'
+	mess ' 8:Coincidence'
+	mess ' 9:'
+        mess '10:2nd level event'
+        mess '11:FPP event'
+        mess '12:2nd level accept'
+        mess '13:2nd level reject'
+        mess '14:'
+        mess '15:Block end event'
+return
+
+Macro vdcwirehit
+	zone 2 2
+	mess ' VDC wire hit'
+	h/pl 90
+	h/pl 91
+	h/pl 92
+	h/pl 93
+return
+
+Macro vdctime
+	zone 2 2
+	mess ' VDC drift time'
+	h/pl 94
+	h/pl 95
+	h/pl 96
+	h/pl 97
+return
+
+Macro vdchit
+	zone 2 2
+	mess ' VDC number of hit wires in each cluster'
+	h/pl 98
+	h/pl 99
+	h/pl 100
+	h/pl 101
+return
+
+Macro vdcclust
+	zone 2 2
+	mess ' VDC number of clusters in each chamber'
+	h/pl 102
+	h/pl 103
+	h/pl 104
+	h/pl 105
+return
+
+Macro vdcposid
+	zone 2 2
+	mess '  0:No error'
+	mess '  1:'
+	mess '  2:Drift time error'
+	mess '  3:Only one hit wire'
+	mess '  4:Multiple minimum drifttime wires in one cluster'
+	mess '  5:Two hit wires'
+	mess '  6:First wire has minimum drift time'
+	mess '  7:Last wire has minimum drift time'
+	mess '  8:Middle wire has minimum drift time'
+	mess '  9:'
+	mess '10-:Number of cluster'
+	h/pl 106
+	h/pl 107
+	h/pl 108
+	h/pl 109
+	zone
+return
+
+Macro vdcrayid
+	zone
+	mess '  0:No error'
+	mess '  2:Cannot solve the equation'
+	mess '0x1:GR_FX'
+	mess '0x2:GR_FU'
+	mess '0x4:GR_RX'
+	mess '0x8:GR_RU'
+	h/pl 122
+return
+	
+Macro fppos
+	zone 2 2
+	mess 'Position in Focal Plane'
+	h/plot 130
+	h/plot 131
+	h/plot 134
+	h/plot 135
+	zone
+return
+
+Macro fpang
+	zone 2 2
+	mess 'Angle in Focal Plane'
+	h/plot 132
+	h/plot 133
+	h/plot 136
+	h/plot 137
+	zone
+return
+
+Macro fp2d
+	zone 2 2
+	mess '2-dim plot in Focal Plane'
+	h/plot 301 
+	h/plot 302 
+	h/plot 304
+	h/plot 306
+	zone
+return
+
+Macro rf
+	zone
+	mess 'Corrected TDC-RF'
+	h/plot 138
+return
+
+Macro pos-ang
+	mess 'Corrected position in F.P. and scattering angle '
+	zone 2 2
+	h/plot 304 
+	h/plot 305 
+	h/plot 310 
+	h/plot 311
+	zone
+return
+
+Macro thcut
+
+	mess 'Position cut by theta-x'
+	zone 1 2
+	h/plot 140
+	h/plot 141
+	zone
+return
+
+Macro th-y-cut
+	mess 'Position cut by theta-x and y'
+	zone 2 4
+	h/pl 140
+	h/pl 141
+	h/pl 142
+	h/pl 143
+	h/pl 144
+	h/pl 145
+	h/pl 146
+	h/pl 147
+	zone
+return
+
+Macro scinti
+	zone 1 2
+	mess 'Triger Scinti. data'
+	h/pl 180
+	h/pl 181
+	zone
+return
+
+Macro ex
+	zone 2 2
+	mess 'Excitation Energy (after particle-id)'
+	hrin 5
+	hrin 6
+	hrin 7
+	cd //pawc
+	h/del 991
+	h/del 990
+	h/copy 5 990
+	h/copy 5 991
+	h/pl 5
+	h/ope/add 6 7 990 .5 .5
+	h/pl 990 s
+	h/pl 6
+	h/pl 7
+	h/ope/sub 5 990 991 
+	h/pl 991
+	cd //test
+	zone
+return
+
+Macro	pcwirehit
+	mess 'pcwirehit: MWPC wire hit'
+	zone 2 3
+	h/pl 150
+	h/pl 151
+	h/pl 152
+	h/pl 153
+	h/pl 154
+	h/pl 155
+	zone
+return
+
+Macro pcpos
+	mess 'pcpos: MWPC position'
+	zone 2 3
+	h/pl 156
+	h/pl 157
+	h/pl 158
+	h/pl 159
+	h/pl 160
+	h/pl 161
+	zone
+return
+
+Macro pcposid
+        mess 'pcposid:MWPC position ID'
+	mess '  0:No error'
+	mess '  1:'
+	mess '  2:halfbit error'
+	mess '  9:'
+	mess '10-:Number of cluster'
+	zone 2 3
+	h/pl 162
+	h/pl 163
+	h/pl 164
+	h/pl 165
+	h/pl 166
+	h/pl 167
+	zone
+return
+
+Macro pcrayid
+	zone 
+        mess 'pcrayid:MWPC raytrace ID'
+	mess '  0:No error'
+	mess '  2:Cannot solve the equation'
+	mess '0x1:PC_U3'
+	mess '0x2:GR_V3'
+	mess '0x4:GR_U4'
+	mess '0x8:GR_V4'
+	zone
+	h/pl 168
+return
+
+Macro slitadc
+	mess 'ADC data from active-slit'
+	zone 2 2
+	h/pl 521
+	h/pl 522
+	h/pl 523
+	h/pl 520
+zone
+return
+
+Macro slittdc
+	mess 'TDC data from active-slit'
+	zone 2 2
+	h/pl 62
+	h/pl 63
+	h/pl 64 
+	h/pl 61
+	zone
+return
+
+Macro slitang
+	mess 'slitang:Angle profile cut by active-slit'
+	zone 2 2
+	h/pl 136
+	h/pl 137
+	h/pl 514
+	h/pl 515
+	zone
+return
+
+Macro diff
+	mess 'diff:Difference of position between VDC and PC'
+	zone 2 2
+	h/pl 240
+	h/pl 241
+	h/pl 242
+	h/pl 243
+	zone
+return

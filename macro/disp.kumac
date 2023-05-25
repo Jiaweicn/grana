@@ -1,0 +1,11 @@
+Macro disp id1=1 id2=700
+
+h/del *
+hrin *
+do loop=[id1],[id2]
+   if $hexist([loop]) then
+     h/pl [loop]
+     wait
+   endif
+enddo
+

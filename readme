@@ -1,0 +1,104 @@
+e370/YR2G0RxI/hozumi-a
+
+  Dear Tang san, Fang san
+
+  I've arranged a small analyzer for your analysis. The source code is placed at ~takahiro/work/e370ana.tar.gz on saho-a.rcnp.osaka-u.ac.jp.
+
+  You can log in the saho-a or saho-b via login-a.rcnp.osaka-u.ac.jp using your own personal account. Copy e370ana.tar.gz to your own directory, and extract and compile it by typing as following.
+
+> gtar xvfz e370ana.tar.gz
+> cd e370ana/src
+> make anagr
+  
+  You can execute my analyzer by typing
+
+> ./anagr -b 64k -rp [run_parameter_file] [bld_data_file] [hbook_file]
+
+The bld data files taken in the previous experiment are placed in 
+
+/np1a/v05/e370/data/bld
+
+Thus, a typical command is 
+
+> ./anagr -b 64k -rp dummy.rp /np1a/v05/e370/data/bld/run2033.bld run2033.hb
+
+  At first, you should confirm the drift time and length calibration by checking the histograms from 90 to 124. If the calibration is not
+correct, you should create new calibration files grfx.tbl, grfu.tbl, grrx.tbl, and grru.tbl by using a macro vdccalib.kumac. Use
+vdccalib.kumac after you open the hbook file from PAW.
+
+PAW> h/file 20 run2033.hb
+PAW> exe ../macro/vdccalib 94 100 335 grfx.tbl
+....
+
+  The tracking efficiency of VDCs are roughly given in the output text when you stop the analyzer. The analyzer stops when it comes to the end of the bld file or the Ctrl + c signal is sent.
+
+  The position dependence of the VDC efficiency is given by executing a macro effposids.kumac from PAW.
+
+PAW> exe ../macro/effposids
+
+  However, the efficiency is given by a function of the excitation energy, you need to perform a correct energy calibration by a careful
+tuning of the parameter file (dummy.rp). Usually, the VDC efficiency has no significant position dependence except at 0 degrees where a
+huge background hit the VDCs. Therefore, you can use the rough number in the output text.
+
+  A ntuple XYAB (700) is defined in the hbook file. It contains the 13 elements.
+
+  X .. Horizontal position at the focal plane (mm)
+  Y .. Vertical position at the focal plane (mm)
+  A .. Horizontal angle at the focal plane (degree)
+  B .. Vertical angle at the focal plane (degree)
+  LA1 .. ADC information from the left PMT mounted on the first scinti.
+  RA1 .. ADC information from the right PMT mounted on the first scinti.
+  LA2 .. ADC information from the left PMT mounted on the second scinti.
+  RA2 .. ADC information from the right PMT mounted on the second scinti.
+  LT1 .. TDC information from the left PMT mounted on the first scinti.
+  RT1 .. TDC information from the right PMT mounted on the first scinti.
+  LT2 .. TDC information from the left PMT mounted on the second scinti.
+  RT2 .. TDC information from the right PMT mounted on the second scinti.
+  RF .. TDC information of RF
+
+When the tracking by VDC is failed, X, Y, A, and B are filled by -10000.
+
+  Once you finished the drift time and length calibration, you should analyze the sieve slit data and make functions to obtain delta
+(momentum), the Y position on the "actual" focal plane, the horizontal scattering angle, and the vertical scattering angle from X, Y, A, and B.
+
+  You can apply the functions to the ntuple data, directly, or you can import your function into my analyzer if you like. Your function must
+be described in correction.c. In the present version, I call a routine grmat from correction.c to obtain the delta, Y, AC, and BC. The
+delta, Y, AC, and BC must be stored in the variables vdcpos10_c[0], vdcpos10_c[1], theta_x[1], and theta_y[1], respectively.
+
+  To perform the particle identification, it's better to use RF signal. You should correct the delta and AC dependence of RF TDC by
+checking the histograms 309 and 310, then you can successfully identify the type of particles.
+
+  Best wishes,
+
+  Takahiro
+
+  Dear Tang san
+
+  run2003.bld in /np1a/v05/e370/data/bld seems to be build with a block size of 48k. Therefore, you should give the block size (48k) to the analyzer.
+
+  The block size is decided when the runxxxx.gr file is converted to the runxxxx.bld file using a code event_builder. If you don't known
+the block size of the bld size, you need to ask someone who made the bld file.
+
+  Unless you don't know who made the bld file, you can use another command "od -h",
+
+> od -h /np1a/v05/e370/data/bld/run2003.bld | less
+0000000 ffff 0600 010f fa1f 0000 0000 0000 0003
+0000020 0403 0201 c34e 645e d307 4300 4800 3200
+0000040 2800 3400 4800 6500 2c00 3400 4800 6500
+0000060 2900 2000 5300 6900 6500 7600 6500 2000
+0000100 5300 6c00 6900 7400 2000 3100 3100 2e00
+0000120 3500 2000 6400 6500 6700 0000 0000 0000
+0000140 0000 0000 0000 0000 0000 0000 0000 0000
+*
+0037760 0000 0000 0000 0000 0000 0000 efff 0200
+0040000 0000 0000 0000 0000 0000 0000 0000 0000
+*
+0140000 ffff 0600 0000 5a3c 0100 d400 dfff 0600
+0140020 0000 4300 0000 0100 cfff 0400 0000 3f00
+.....
+
+The output from od command indicate that the run start block ends at 0140000 bytes in octal (=48 kbytes in decimal). 
+
+  Best wishes,
+
+  Takahiro

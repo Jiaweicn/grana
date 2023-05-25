@@ -1,0 +1,109 @@
+Macro posids  id1=620 id2=! titl=!
+
+tmpid=13223
+
+if [id2].eq.! then
+    id2=[id1]+2
+endif
+
+if $hexist([id1]).eq.0 then
+   hrin [id1]
+   if $hexist([id1]).eq.0 then
+      mess Histgram [id1] does not exist. Exit ...
+      stopm
+   endif
+endif
+
+if $hexist([id2]).eq.1 then
+    mess Histgram [id2] will be removed.
+    wait
+    h/del [id2]
+endif
+
+for nvec in effp ex eff afx afu arx aru fx fu rx ru rfx rfu rrx rru
+  if $vexist([nvec]) then
+     mess Vector [nvec] will be removed.
+     wait
+     vec/del [nvec]
+  endif
+endfor
+
+xlen=$hinfo([id1],xbins)
+ylen=$hinfo([id1],ybins)
+xmin=$hinfo([id1],xmin)
+xmax=$hinfo([id1],xmax)
+
+zone 1 2
+
+if [titl].eq.! then
+   titl=Efficiency
+endif
+
+h/cre/1d [id2] [titl] [xlen] [xmin] [xmax]
+
+vec/cre effp([xlen],[ylen])
+vec/cre ex([xlen])
+
+h/get/cont [id1] effp
+h/get/abs  [id2] ex
+
+vec/copy effp(:,1) afx
+vec/copy effp(:,2) afu
+vec/copy effp(:,3) arx
+vec/copy effp(:,4) aru
+vec/copy effp(:,5) fx
+vec/copy effp(:,6) fu
+vec/copy effp(:,7) rx
+vec/copy effp(:,8) ru
+
+sigma rfx=afx/fx
+sigma rfxe=rfx*sqrt(1.0/fx+1.0/afx)
+sigma rfu=afu/fu
+sigma rfue=rfu*sqrt(1.0/fu+1.0/afu)
+sigma rrx=arx/rx
+sigma rrxe=rrx*sqrt(1.0/rx+1.0/arx)
+sigma rru=aru/ru
+sigma rrue=rru*sqrt(1.0/ru+1.0/aru)
+sigma eff=rfx*rfu*rrx*rru
+sigma effe=eff*sqrt((rfxe/rfx)**2+(rfue/rfu)**2+(rrxe/rrx)**2+(rrue/rru)**2)
+
+
+*zone 2 2
+null [xmin] [xmax] 0 1.05
+ci=0
+for nvec in rfx rfu rrx rru
+  ci=[ci]+1
+  set plci [ci]
+  graph [xlen] ex [nvec] l
+  dline [xmin] [xmax] 1 1
+endfor
+set plci 1
+
+
+h/put/cont [id2] eff
+h/put/err  [id2] effe
+
+set hcol 1
+max [id2] 1.1
+h/pl [id2] hist
+h/pl [id2] es
+dline [xmin] [xmax] 1 1
+
+sigma a=vsum(afx)/vsum(fx)
+sigma b=vsum(afu)/vsum(fu)
+sigma c=vsum(arx)/vsum(rx)
+sigma d=vsum(aru)/vsum(ru)
+
+vec/write a,b,c,d ! 'FX: ',F6.4,2X,'FU: ',F6.4,2X,'RX: ',F6.4,2X,'RU: ',F6.4
+sigma e=a*b*c*d
+vec/write e ! 'Total:',F5.3
+vec/del effp,ex,eff,afx,afu,arx,aru,fx,fu,rx,ru,rfx,rfu,rrx,rru
+vec/del rfxe,rfue,rrxe,rrue,effe
+zone 
+
+return
+
+
+
+
+

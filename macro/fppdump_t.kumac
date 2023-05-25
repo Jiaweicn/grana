@@ -1,0 +1,75 @@
+Macro fppdump_t fname=dump
+*	new [fname].hb
+	vec/del *
+	vec/cre channel(3700)
+	h/get/abs 1000 channel
+	zone 2 2
+	mess 'Excitatition Energy (F.P. event)'
+	vec/cre exp(3700)
+	vec/cre exb1(3700)
+	vec/cre exb2(3700)
+	h/pl 1000
+	h/pl 1001
+	h/pl 1002
+	h/get/cont 1000 exp
+	h/get/cont 1001 exb1
+	h/get/cont 1002 exb2
+	wait
+	zone 2 2
+	mess 'Excitation Energy gated by Secondary scattering angle (y-peak)'
+	vec/cre urp(2400)
+	vec/cre ulp(2400)
+	vec/cre drp(2400)
+	vec/cre dlp(2400)
+	h/pl 1010
+	h/pl 1020
+	h/pl 1030
+	h/pl 1040
+	h/get/cont 1010 urp
+	h/get/cont 1020 ulp
+	h/get/cont 1030 drp
+	h/get/cont 1040 dlp
+	wait
+	mess 'Excitation Energy gated by Secondary scattering angle (y-back1)'
+	vec/cre urb1(2400)
+	vec/cre ulb1(2400)
+	vec/cre drb1(2400)
+	vec/cre dlb1(2400)
+	h/pl 1011
+	h/pl 1021
+	h/pl 1031
+	h/pl 1041
+	h/get/cont 1011 urb1
+	h/get/cont 1021 ulb1
+	h/get/cont 1031 drb1
+	h/get/cont 1041 dlb1
+	wait
+	mess 'Excitation Energy gated by Secondary scattering angle (y-back2)'
+	vec/cre urb2(2400)
+	vec/cre ulb2(2400)
+	vec/cre drb2(2400)
+	vec/cre dlb2(2400)
+	h/pl 1012
+	h/pl 1022
+	h/pl 1032
+	h/pl 1042
+	h/get/cont 1012 urb2
+	h/get/cont 1022 ulb2
+	h/get/cont 1032 drb2
+	h/get/cont 1042 dlb2
+	zone
+	mess 'Writing to file .....'
+	mess 'FP event'
+	vec/write channel,exp,exb1,exb2 [fname].fp F8.5,3(1XF7.1)
+	vec/cre channel(2400)
+	h/get/abs 1010 channel
+	mess 'FPP peak'
+	vec/write channel,urp,ulp,drp,dlp [fname].peak F8.5,4(1XF7.1)
+	mess 'FPP back1'
+	vec/write channel,urb1,ulb1,drb1,dlb1 [fname].back1 F8.5,4(1XF7.1)
+	mess 'FPP back2'
+	vec/write channel,urb2,ulb2,drb2,dlb2 [fname].back2 F8.5,4(1XF7.1)
+return
+
+
+

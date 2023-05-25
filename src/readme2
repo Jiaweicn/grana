@@ -1,0 +1,4 @@
+see the wiki page for how to convert from bld files to root files
+example:
+./anagr -b 48k -rp dummy.rp ../../e370/data/bld/run2094.bld run2094.root
+

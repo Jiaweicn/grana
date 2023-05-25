@@ -1,0 +1,3 @@
+cp drift.template drift.kumac
+sed -i "s/RUN/$1/" drift.kumac
+paw -b drift.kumac -w 0

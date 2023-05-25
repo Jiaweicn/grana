@@ -1,0 +1,15 @@
+# 1230 (Y-tuned)
+M1      a
+M2      13C
+M3      a
+M4      13C
+#E_LAB   400.182
+E_LAB   400.26
+B_GR    950.600
+RHO     3.01641
+DEDXGR  1.0
+GRANG   0.0
+Y_TGT   -1.8
+DEX     -0.21208  1.0267
+Z3      2
+GR_MODE UNF

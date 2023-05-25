@@ -1,0 +1,62 @@
+Macro fppdump2 fname=dump
+	vec/cre channel(125)
+	addbin 352 752 5. 34. 30
+	addbin 353 753 5. 34. 30
+	addbin 354 754 5. 34. 30
+
+	addbin 362 762 5. 34. 30
+	addbin 363 763 5. 34. 30
+	addbin 364 764 5. 34. 30
+
+	addbin 372 772 5. 34. 30
+	addbin 373 773 5. 34. 30
+	addbin 374 774 5. 34. 30
+
+	addbin 382 782 5. 34. 30
+	addbin 383 783 5. 34. 30
+	addbin 384 784 5. 34. 30
+
+	h/get/abs 752 channel
+	zone 2 2
+	mess 'Excitation Energy gated by Secondary scattering angle (y-peak)'
+	vec/cre urp(125)
+	vec/cre ulp(125)
+	vec/cre drp(125)
+	vec/cre dlp(125)
+
+	h/get/cont 752 urp
+	h/get/cont 762 ulp
+	h/get/cont 772 drp
+	h/get/cont 782 dlp
+
+	mess 'Excitation Energy gated by Secondary scattering angle (y-back1)'
+	vec/cre urb1(125)
+	vec/cre ulb1(125)
+	vec/cre drb1(125)
+	vec/cre dlb1(125)
+	h/get/cont 753 urb1
+	h/get/cont 763 ulb1
+	h/get/cont 773 drb1
+	h/get/cont 783 dlb1
+
+	mess 'Excitation Energy gated by Secondary scattering angle (y-back2)'
+	vec/cre urb2(125)
+	vec/cre ulb2(125)
+	vec/cre drb2(125)
+	vec/cre dlb2(125)
+	h/get/cont 754 urb2
+	h/get/cont 764 ulb2
+	h/get/cont 774 drb2
+	h/get/cont 784 dlb2
+	zone
+	mess 'Writing to file .....'
+	mess 'Spin-up Right'
+	vec/write channel,urp,urb1,urb2 [fname].ur F8.5,3(1XF7.1)
+	mess 'Spin-up Left'
+	vec/write channel,ulp,ulb1,ulb2 [fname].ul F8.5,3(1XF7.1)
+	mess 'Spin-down Right'
+	vec/write channel,drp,drb1,drb2 [fname].dr F8.5,3(1XF7.1)
+	mess 'Spin-down Left'
+	vec/write channel,dlp,dlb1,dlb2 [fname].dl F8.5,3(1XF7.1)
+return
+

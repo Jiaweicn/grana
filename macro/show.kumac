@@ -1,0 +1,9 @@
+* SHOW (PAW Macro) ---- show histgrams
+* Version 1.00  06-JAN-1997  by A. Tamii
+
+MACRO SHOW MIN=1 MAX=10000
+	DO ID=[MIN], [MAX]
+		HIST/PLOT [ID]
+		WAIT
+	ENDDO
+RETURN

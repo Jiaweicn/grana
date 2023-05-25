@@ -1,0 +1,27 @@
+Macro hpol run=1
+  h/de *
+  hf   r[run]_pol.hb
+  ho   2 r[run]_ex.hst
+  hp   2
+  ho4  3 r[run]_pol.hst
+  zone 2 2
+  hp   3
+  hp   4
+  hp   5
+  hp   6
+  zone
+RETURN
+
+Macro hback run=1
+  h/de *
+  hf   r[run]_back.hb
+  ho   2 r[run]_bk.hst
+  hp   2
+  ho4  3 r[run]_back.hst
+  zone 2 2
+  hp   3
+  hp   4
+  hp   5
+  hp   6
+  zone
+RETURN

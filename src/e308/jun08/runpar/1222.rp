@@ -1,0 +1,14 @@
+# 1222 (Y-tuned)
+M1      a
+M2      24Mg
+M3      a
+M4      24Mg
+E_LAB   400.405
+B_GR    961.844
+RHO     3.01641
+DEDXGR  1.0
+GRANG   6.5
+Y_TGT   -2.9
+DEX     0.0  1.0
+Z3      2
+GR_MODE UNF

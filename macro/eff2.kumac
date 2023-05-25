@@ -1,0 +1,186 @@
+Macro eff  id=1 
+MESSAGE id [1]
+
+min=0
+max=1
+vec/cre temp1(10000)
+vec/cre temp2(10000)
+hi/get/cont [1] temp2
+hi/get/abscissa [1] temp1
+n1=1
+n2=2
+x1=temp1([n1])
+x2=temp1([n2])
+a=[n2]-[n1]
+b=[x2]-[x1]
+d=[a]/[b]
+c=[max]-[x1]+0.5/[d]
+e=[d]*[c]
+nmax=[e]+[n1]-0.5
+c=[min]-[x1]+0.5/[d]
+e=[d]*[c]
+nmin=[e]+[n1]+0.5
+nmax2=$sigma(int([nmax]))
+nmin2=$sigma(int([nmin]))
+MESSAGE ch from [nmin2] to [nmax2]
+vec/copy temp2([nmin2]:[nmax2]) temp5
+vec/copy temp1([nmin2]:[nmax2]) temp6
+xmin=temp1([nmin2])-0.5/[d]
+xmax=temp1([nmax2])+0.5/[d]
+MESSAGE x  from [xmin] to [xmax]
+MESSAGE sum  $sigma(vsum(temp5))
+sum0=$sigma(vsum(temp5))
+vec/del temp1
+vec/del temp2
+vec/del temp5
+vec/del temp6
+
+min=2
+max=3
+vec/cre temp1(10000)
+vec/cre temp2(10000)
+hi/get/cont [1] temp2
+hi/get/abscissa [1] temp1
+n1=1
+n2=2
+x1=temp1([n1])
+x2=temp1([n2])
+a=[n2]-[n1]
+b=[x2]-[x1]
+d=[a]/[b]
+c=[max]-[x1]+0.5/[d]
+e=[d]*[c]
+nmax=[e]+[n1]-0.5
+c=[min]-[x1]+0.5/[d]
+e=[d]*[c]
+nmin=[e]+[n1]+0.5
+nmax2=$sigma(int([nmax]))
+nmin2=$sigma(int([nmin]))
+MESSAGE ch from [nmin2] to [nmax2]
+vec/copy temp2([nmin2]:[nmax2]) temp5
+vec/copy temp1([nmin2]:[nmax2]) temp6
+xmin=temp1([nmin2])-0.5/[d]
+xmax=temp1([nmax2])+0.5/[d]
+MESSAGE x  from [xmin] to [xmax]
+MESSAGE sum  $sigma(vsum(temp5))
+sum1=$sigma(vsum(temp5))
+vec/del temp1
+vec/del temp2
+vec/del temp5
+vec/del temp6
+
+min=3
+max=4
+vec/cre temp1(10000)
+vec/cre temp2(10000)
+hi/get/cont [1] temp2
+hi/get/abscissa [1] temp1
+n1=1
+n2=2
+x1=temp1([n1])
+x2=temp1([n2])
+a=[n2]-[n1]
+b=[x2]-[x1]
+d=[a]/[b]
+c=[max]-[x1]+0.5/[d]
+e=[d]*[c]
+nmax=[e]+[n1]-0.5
+c=[min]-[x1]+0.5/[d]
+e=[d]*[c]
+nmin=[e]+[n1]+0.5
+nmax2=$sigma(int([nmax]))
+nmin2=$sigma(int([nmin]))
+MESSAGE ch from [nmin2] to [nmax2]
+vec/copy temp2([nmin2]:[nmax2]) temp5
+vec/copy temp1([nmin2]:[nmax2]) temp6
+xmin=temp1([nmin2])-0.5/[d]
+xmax=temp1([nmax2])+0.5/[d]
+MESSAGE x  from [xmin] to [xmax]
+MESSAGE sum  $sigma(vsum(temp5))
+sum2=$sigma(vsum(temp5))
+vec/del temp1
+vec/del temp2
+vec/del temp5
+vec/del temp6
+
+min=5
+max=6
+vec/cre temp1(10000)
+vec/cre temp2(10000)
+hi/get/cont [1] temp2
+hi/get/abscissa [1] temp1
+n1=1
+n2=2
+x1=temp1([n1])
+x2=temp1([n2])
+a=[n2]-[n1]
+b=[x2]-[x1]
+d=[a]/[b]
+c=[max]-[x1]+0.5/[d]
+e=[d]*[c]
+nmax=[e]+[n1]-0.5
+c=[min]-[x1]+0.5/[d]
+e=[d]*[c]
+nmin=[e]+[n1]+0.5
+nmax2=$sigma(int([nmax]))
+nmin2=$sigma(int([nmin]))
+MESSAGE ch from [nmin2] to [nmax2]
+vec/copy temp2([nmin2]:[nmax2]) temp5
+vec/copy temp1([nmin2]:[nmax2]) temp6
+xmin=temp1([nmin2])-0.5/[d]
+xmax=temp1([nmax2])+0.5/[d]
+MESSAGE x  from [xmin] to [xmax]
+MESSAGE sum  $sigma(vsum(temp5))
+sum3=$sigma(vsum(temp5))
+vec/del temp1
+vec/del temp2
+vec/del temp5
+vec/del temp6
+
+min=6
+max=7
+vec/cre temp1(10000)
+vec/cre temp2(10000)
+hi/get/cont [1] temp2
+hi/get/abscissa [1] temp1
+n1=1
+n2=2
+x1=temp1([n1])
+x2=temp1([n2])
+a=[n2]-[n1]
+b=[x2]-[x1]
+d=[a]/[b]
+c=[max]-[x1]+0.5/[d]
+e=[d]*[c]
+nmax=[e]+[n1]-0.5
+c=[min]-[x1]+0.5/[d]
+e=[d]*[c]
+nmin=[e]+[n1]+0.5
+nmax2=$sigma(int([nmax]))
+nmin2=$sigma(int([nmin]))
+MESSAGE ch from [nmin2] to [nmax2]
+vec/copy temp2([nmin2]:[nmax2]) temp5
+vec/copy temp1([nmin2]:[nmax2]) temp6
+xmin=temp1([nmin2])-0.5/[d]
+xmax=temp1([nmax2])+0.5/[d]
+MESSAGE x  from [xmin] to [xmax]
+MESSAGE sum  $sigma(vsum(temp5))
+sum4=$sigma(vsum(temp5))
+vec/del temp1
+vec/del temp2
+vec/del temp5
+vec/del temp6
+
+eff1=[sum0]/([sum0]+[sum1])
+eff2=[sum0]/([sum0]+[sum2])
+eff3=[sum0]/([sum0]+[sum3])
+eff4=[sum0]/([sum0]+[sum4])
+eff0=[eff1]*[eff2]*[eff3]*[eff4]
+MESSAGE efficiency_u3 [eff1]
+MESSAGE efficiency_v3 [eff2]
+MESSAGE efficiency_u4 [eff3]
+MESSAGE efficiency_v4 [eff4]
+MESSAGE total_efficiency [eff0]
+
+RETURN
+

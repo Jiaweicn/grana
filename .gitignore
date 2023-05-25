@@ -1,0 +1,11 @@
+pid/
+root_files/
+ss_calib/
+angle_calib/root_files/
+
+src/run2094.root.old
+
+src/e_calib/soft_corr/soft_corr2/root_file_a_corr/run2074_a_corr.root
+src/e_calib/soft_corr/soft_corr2/root_file_a_corr/run2075_2078_a_corr.root
+src/e_calib/soft_corr/soft_corr3/root_file_ab_corr/run2074_ab_corr.root
+src/e_calib/soft_corr/soft_corr3/root_file_ab_corr/run2075_2078_ab_corr.root

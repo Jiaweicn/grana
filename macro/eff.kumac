@@ -1,0 +1,27 @@
+macro eff id=122
+
+if $vexist(eff) then
+vec/del eff
+endif
+
+if $vexist(ef) then
+vec/del ef
+endif
+
+vec/cre eff(26)
+vec/cre ef(1)
+
+h/get/cont [id] eff
+all=eff(1)
+fx=eff(1)/(eff(12)+eff(1))
+fu=eff(1)/(eff(13)+eff(1))
+rx=eff(1)/(eff(15)+eff(1))
+ru=eff(1)/(eff(19)+eff(1))
+mess FX:[fx]
+mess FU:[fu]
+mess RX:[rx]
+mess RU:[ru]
+total=[fx]*[fu]*[rx]*[ru]
+mess total:[total]
+vec/inp ef(1) [total]
+

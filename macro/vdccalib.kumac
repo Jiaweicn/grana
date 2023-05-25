@@ -1,0 +1,51 @@
+Macro vdccalib id=457 from=255 to=560 file=!
+
+    h/copy [id]([from].:[to].) 9999
+    vlen=$hinfo(9999,xbins)
+    vec/cre ch([vlen]) 
+    vec/cre count([vlen])
+    vec/cre derr([vlen])
+    vec/cre csum([vlen])
+    vec/cre dist([vlen])
+    vec/cre info(2) i [from] [to]
+
+    h/get/abs 9999 ch
+    h/get/cont 9999 count
+
+    h/del 9999
+
+    vec/write info(1),info(2) [file] 2I5 O
+
+    sigma  all=vsum(count)
+    twid=([to]-[from])
+    vec/input csum([vlen]) count([vlen])
+    vec/ope/vdiv  csum([vlen]) all dist([vlen])
+    vec/ope/vsca  count 1.0/all derr
+    sigma derr=derr+1.0/[twid]
+
+    channel=[from]+[vlen]-1
+    vec/input ch([vlen]) [channel]
+*    vec/write ch([vlen]),count([vlen]),csum([vlen]),dist([vlen])
+    
+    cur=[vlen]-1   
+    do i=[cur],1,-1
+     j=[i]+1
+     channel=[from]+[i]-1
+     vec/input ch([i]) [channel]
+     vec/ope/vadd  csum([j]) count([i]) csum([i])
+     vec/ope/vdiv csum([i]) all dist([i])
+*     vec/write ch([i]),count([i]),csum([i]),dist([i])
+*************************
+*temporay 99/11/03
+*    vec/input derr([j]) 0.001
+*************************
+      vec/write ch([j]),dist([j]),derr([j]) [file] (F5.1,4X,E12.6,4X,E12.6) ' '
+    enddo
+    vec/write ch(1),dist(1),derr([j]) [file] F5.1,4X,E12.6,4X,E12.6 C
+    vec/del ch,count,csum,dist,all,info,derr
+    if [file].ne.! then
+      sh cat [file] > [file].tmp
+      sh ../macro/fconv < [file].tmp > [file]
+      sh rm -f [file].tmp
+   endif
+return

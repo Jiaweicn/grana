@@ -1,0 +1,51 @@
+macro save run=2000
+
+h/del *
+cd //grs
+hrin *
+cd //pawc
+fname=../hbook/run[run].hb
+fname2=../scaler/run[run].sca
+
+if $fexist(scaler.dat) then
+  sh mv scaler.dat [fname2]
+else
+  mess No scaler.dat exists.
+endif
+
+if $fexist([fname]) then
+  mess File [fname] will be deleted.
+  wait
+endif
+
+h/file 20 ../hbook/run[run].hb ! n
+hrout *
+close 20
+
+h/del *
+cd //grs
+
+return
+
+
+macro las run=2000
+
+h/del *
+cd //las
+hrin *
+cd //pawc
+fname=../hbook_las/run[run].hb
+
+if $fexist([fname]) then
+  mess File [fname] will be deleted.
+  wait
+endif
+
+h/file 20 [fname] ! n
+hrout *
+close 20
+
+h/del *
+cd //las
+
+return

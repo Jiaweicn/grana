@@ -1,0 +1,122 @@
+#!/bin/python
+# -*- coding: UTF-8 -*-
+__metaclass__ = type
+
+
+import ROOT as root
+import numpy as np
+import sys
+import os
+
+
+#check command line inputs, and return file name and scale
+def check_input():
+    if len(sys.argv) != 2 and len(sys.argv) != 3:
+        sys.stderr.write('usage: ./xxx <input file> [scale]\n')
+        sys.stderr.write('input file = \'-\' means stdin\n')
+        sys.stderr.write('have a nice day!\n')
+        sys.exit(-1)
+    if len(sys.argv) == 3:
+        scale = float(sys.argv[2])
+    else:
+        scale = 1
+    return sys.argv[1], scale
+
+
+#read input from input file 'f_name'
+def get_input(f_name):
+    if f_name == '-':
+        f = sys.stdin
+    else:
+        f = open(f_name)
+
+    lines = []
+    for line in f:
+        lines.append(line)
+    xy = [[] for i in range(len(lines[0].split()))]
+
+    for line in lines:
+        tmp = line.split()
+        for i,x in enumerate(tmp):
+            xy[i].append(float(x))
+
+    f.close()
+    #we need to reopen the stdin for the 'pause...'
+    if f_name == '-':
+        sys.stdin = os.fdopen(1, 'r')
+    return xy
+
+
+def get_xy_min_max(xy):
+    x_min = np.amin(xy[0])
+    x_max = np.amax(xy[0])
+    y_min = np.amin(xy[1])
+    y_max = np.amax(xy[1])
+    for i in range(int(len(xy)/2))[1:]:
+        x_min2 = np.amin(xy[i*2])
+        x_max2 = np.amax(xy[i*2])
+        y_min2 = np.amin(xy[i*2+1])
+        y_max2 = np.amax(xy[i*2+1])
+        if (x_min2 < x_min):
+            x_min = x_min2
+        if (y_min2 < y_min):
+            y_min = y_min2
+        if (x_max2 > x_max):
+            x_max = x_max2
+        if (y_max2 > y_max):
+            y_max = y_max2
+    return x_min, x_max, y_min, y_max
+
+
+def get_color(i):
+    idx = i % 50
+    if (idx == 0 or idx == 10 or idx == 18 or idx == 19):
+        #because these colors are almost white
+        idx += 20
+    return idx
+        
+#scale is used only if the input file has only one column
+f_name, scale = check_input()
+
+#xy is a big list containing x1, y1, x2, y2 ... for graphs,
+#these x1, y1,... are also lists
+xy = get_input(f_name)
+if len(xy) == 1:
+    xy.insert(0, [i*scale for i in range(len(xy[0]))])
+
+#graphs is a list containing root.TGraph to be drawn
+graphs = []
+leg = root.TLegend(.7, .7, .9, .9)
+for i in range(int(len(xy)/2)):
+    col = get_color(i+1)
+    graph = root.TGraph(len(xy[0]), np.float64(xy[i*2]), np.float64(xy[i*2+1]))
+    graph.SetLineColor(col)
+    graph.SetMarkerColor(col)
+    graphs.append(graph)
+    leg.AddEntry(graph, 'graph' + str(i+1), 'lp')
+
+#create a TH2D for the proper axis range:
+x_min, x_max, y_min, y_max = get_xy_min_max(xy)
+y_min -= .05 * (y_max - y_min)
+y_max += .05 * (y_max - y_min)
+h2 = root.TH2F('h2', 'h2', 1000, -400, 400, 1000, -2, 2)
+h2.SetStats(0)
+
+#Draw
+c1 = root.TCanvas('c1', 'c1')
+h2.Draw()
+for graph in graphs:
+    graph.Draw('same*')
+leg.Draw()
+c1.Update()
+
+
+print('canvas name: c1; histogram name: h2; graph name: graph')
+cmd = input('input command or press enter to continue...\n')
+while cmd.lstrip():
+    try:
+        exec(cmd)
+        c1.Update()
+    except:
+        print('error executing cmd')
+    cmd = input('input command or press enter to continue...\n')

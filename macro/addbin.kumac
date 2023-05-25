@@ -1,0 +1,85 @@
+Macro addbin id1=1 id2=2 min=1 max=2 nadd=2 title=! chopt=!
+
+if $hexist([id1]).eq.0 then
+  mess Histgram [id1] does not exist. Exit...
+  stopm
+endif
+
+
+hmin=$hinfo([id1],xmin)
+hmax=$hinfo([id1],xmax)
+xbin=$hinfo([id1],xbins)
+
+step=([hmax]-[hmin])/[xbin]
+
+
+if [hmax].lt.[max] then
+   mess Hihger limit is too large. Exit....
+   stopm
+endif
+
+if [hmin].gt.[min] then
+   mess Lower limit is too small. Exit....
+   stopm
+endif
+
+nmin=$sigma(int(([min]-[hmin])/[step]+1))
+nmax=[xbin]-$sigma(int(([hmax]-[max])/[step]))
+
+vlen=$sigma(int(([nmax]-[nmin]+1)/[nadd]))
+
+
+mess from [nmin]ch to [nmax]ch (vlen [vlen])
+
+if $vexist(temp1) then
+  mess 'Vector temp1 exist. Exit...'
+  stopm
+endif
+
+if $vexist(temp2) then
+  mess 'Vector temp2 exist. Exit...'
+  stopm
+endif
+
+if $vexist(temp3) then
+  mess 'Vector temp3 exist. Exit...'
+  stopm
+endif
+
+if $vexist(temp4) then
+  mess 'Vector temp4 exist. Exit...'
+  stopm
+endif
+
+vec/cre temp1([vlen])
+vec/cre temp2([vlen])
+vec/cre temp3([vlen])
+vec/cre temp4([vlen])
+
+hi/get/rebin [id1] temp1 temp2 temp3 temp4 [vlen] [nmin] [nmax] n
+
+amin=temp1(1)
+amax=temp1([vlen])
+astep=([amax]-[amin])/([vlen]-1)
+hmin=[amin]-[astep]*0.5
+hmax=[amax]+[astep]*0.5
+if [title].eq.! then
+  title=$htitle([id1])
+endif
+
+if $hexist([id2]) then
+  mess Histgram [id2] will replace
+  h/del [id2]
+  wait
+endif
+
+h/cre/1d [id2] [title] [vlen] [hmin] [hmax]
+mess Histgram from [hmin] to [hmax]
+h/put/cont [id2] temp2
+h/put/err [id2] temp4
+
+*vec/write temp1,temp2 ! 2F10.3
+hi/pl [id2] hist
+vec/del temp1,temp2,temp3,temp4
+
+return

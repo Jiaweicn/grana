@@ -1,0 +1,11 @@
+Field calibration
+2074 (674.429 mT)
+2075 (681.147 mT)
+2076 (same field with blocki, short)
+2077 (short)
+2078 (same as 2077)
+change filed 687.891 mT
+2079
+2083, 2084 (664.286 mT)
+
+modify booking_gr.c to get drifting time spectra for X>0

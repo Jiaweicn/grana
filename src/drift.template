@@ -1,0 +1,6 @@
+h/file 20 hb/runRUN.hb 4096
+exe ../macro/vdccalib 94 100 500 grfx.tbl
+exe ../macro/vdccalib 95 100 500 grfu.tbl
+exe ../macro/vdccalib 96 100 500 grrx.tbl
+exe ../macro/vdccalib 97 100 500 grru.tbl
+

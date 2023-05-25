@@ -1,0 +1,39 @@
+Run2059
+
+m1= 3728.43  m2=22342.07  m3= 3728.43 (z3= 2.0)  m4=22342.07
+K1=206.0  GRANG=  0.0  BGR= 664.300   RHO=3.01016   dp/dx=-6.4808e-05
+Y_TGT=  0.00 mm  DEX[0]= -0.20  DEX[1]=  1.02
+GR_RFC1=260.00   GR_RFC2=775.00  GR_RFW= 50.00
+GR_YP_L= -2.00   GR_YP_H=  2.00
+GR_YB1_L= -4.00  GR_YB1_H= -2.00  GR_YB2_L=  2.00  GR_YB2_H=  4.00
+GR_MODE=UNF
+GR_PID1_L=130.00   GR_PID1_H=300.00
+I have read 2013315072 bytes.
+Block Analyzed:40961	Skipped:0
+Event Analyzed:8503266
+CPU time = 69.251734 sec
+MWPC hb-error:0 badcham:0 noch:0
+SCALER 0:     3094369           0     3094369           0
+SCALER 1:     8910281           0     8910281           0
+SCALER 2:     8462305           0     8462305           0
+SCALER 3:     8910281           0     8910281           0
+SCALER 4:           0           0           0           0
+SCALER 5:    46899793           0    46899793           0
+SCALER 6:    44608118           0    44608118           0
+SCALER 7:     8910282           0     8910282           0
+SCALER 8:     8908358           0     8908358           0
+SCALER 9:     8910281           0     8910281           0
+SCALER a:           0           0           0           0
+SCALER b:     8462305           0     8462305           0
+SCALER c:     8462302           0     8462302           0
+SCALER d:           0           0           0           0
+SCALER e:     8424954           0     8424954           0
+SCALER f:     8910334           0     8910334           0
+
+Efficiency
+GR_FX :0.6770      948976
+GR_FU :0.9257      694010
+GR_RX :0.8800      730086
+GR_RU :0.9187      699286
+
+Analyzing ratio: 100.00

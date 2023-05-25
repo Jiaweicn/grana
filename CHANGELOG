@@ -1,0 +1,156 @@
+          Ver. 0.2  データをRegionごとに切り分けられる
+                    NIM-IN-BIT の再現に成功
+97/07/20  Ver. 0.3  FERA,INPUT_REG をサポート
+97/07/21  Ver. 0.31 FERET をサポート
+97/07/23  Ver. 0.4  VDC3377 をサポート
+97/07/23  Ver. 0.41 event buffer の初期化プロセスを改良(速度25%向上)
+97/07/23  Ver. 0.5  MWPC をサポート obsoleted.
+97/07/26  Ver. 0.6  MWPC をサポート
+97/07/26  Ver. 0.7  Booking のタイミングを変更
+97/08/01  Ver. 0.71 いろいろ変更(ray trace の一歩手前まで)
+                    -vdc オプションを採用
+97/08/06  Ver. 0.8  ray trace をサポート
+          Ver. 0.9  Histgram-ID の付けかえ
+                    Vertex routine をサポート
+97/09/12  Ver. 1.0  FPP 偏極測定をサポート
+                    VDC raytracing を改良(最小二乗法を導入)
+97/09/26  Ver. 1.1  Histgram をやや変更
+                    run2061 に最適化
+97/10/12  Ver. 1.2  Y-cut Background を二分割
+97/10/15  Ver. 1.3  Event ID の定義を C-style に変更
+                    VDC の cluster数が想定値を超えた時に発生するバグをfix
+97/12/18  Ver. 1.4  フロー制御・VDC整理法変更のためのコンパイルオプションを設定
+                    hbfile name のバグをfix
+98/02/28            -global, -online, -port の各オプションを採用
+98/04/11            Ctrl-c によるプログラムの中止処理をサポート
+98/04/20            -b オプションを採用
+98/05/01  Ver. 1.5  ２月以来の開発項目をFPPに対しても有効に
+                    FPP解析のためのコンパイルオプションを設定
+                    analib5.f を analib6.f, histdef.f に分割
+                    analyzing_v1.4.c を analyzing_v1.5.c, correction.c に分割
+98/05/12            MWPC のルーチンを改良
+98/07/04  Ver. 1.51 FERA, FERET の word count をチェックするルーチンを追加
+                    3351PADC のルーチンを追加
+98/07/30            縦偏極用コンパイルオプション -D_VER_POL を設定
+99/03/24            Region Header の扱いを一部変更
+                    Unknown region は case by case に対応する
+		    Region f(Check Sum) をサポート
+99/06/13  Ver. 1.52 VDC Least Kai-square ルーチンを変更
+                    VDC time-pos table の format を変更
+99/11/02  Ver. 1.53 VDC Reflect correction を廃止
+00/01/06  Ver. 1.54 _VDC_TWOWIRE_ON 使用時に vdc->dis が ＋方向に tail を
+                    引くバグをfix
+                    BLP をサポート
+00/01/13  Ver. 1.55 Event header 類のエラーメッセージを一部変更
+                    BLP のエラーチェックを甘くするコンパイルオプション
+                      make blp2 を追加
+00/01/13  Ver. 1.56 anablp.c を v1.1 に。
+                    Camac Scaler の最大値を規定する SC_MAX を定義
+00/01/21  analas Ver.0.1
+                    ana_v1.56 から分離して LAS を含んだルーチン analas.c
+                    をつくる。
+                    ヒストグラム定義ファイルは histdef_las.f
+                    booking routine は booking_las.f
+                    将来の(p,2p)対応の可能性を残してGR関連ルーチンは
+                    そのまま残す。
+00/01/24            one-wire cluster を解析から取り除いて gamma-event を
+                    補正するためのコンパイルオプション _ELIM_GAMMA を追加
+                    VDC 解析ルーチンを vdc3377_v2.c から vdc3377_v3.c に
+                    update
+00/01/28  analas Ver.1.0
+                    とりあえず実用段階に入る
+                    GR を無視するためのコンパイルオプション -D_GR_OFF を定義。
+                    LASを無視するためのコンパイルオプション -D_LAS_OFF を定義。
+00/01/28  ana Ver. 1.57 
+                    LAS を考慮した vdc3377_v3.c に対応するために
+                    変数 struct vdcdata lasfx.... を追加
+00/01/31            コンパイルオプション -D_LINUX を定義
+                    (linux というよりは gcc か？)
+                    -D_LINUX で hstini(end)_g(f)_ が
+                                hstini(end)_g(f)__ となる。
+                    timedata のデータ型を time_t に変更
+                    histid のデータ型を int に変更
+          analib6.f integer*2 を integer に
+          ana9.h    book1,book1d,book2d のプロトタイプ宣言を追加
+
+00/02/23  ana_v1.57.c
+                    kinematics を 計算するための関数
+                    calccmang, calclabk, calcfact, calcex4 を追加
+          Makefile  horn, miho の二本立てから、
+                    必要に応じて horn と miho の部分をコメントアウト
+                    する方法に変更。
+
+00/03/18  ana9.h
+          e137/dec99/config.h
+                    DSR- mode 時の focal plane, magnification の情報を
+                    追加
+          Makefile  -D$(ARCH) の -D を $(ARCH) の中に含める。
+                    (miho でコンパイルする際のエラーに対する対処)
+
+00/03/21  ana9.h    PI の定義方法を改善
+                    #ifndf PI .... #endif とした
+          ana_v1.57.c 
+                    main関数の bugfix
+                    型を void から int に変更
+
+00/04/02 Makefile   tuba のためのコンパイルオプションを設定
+                    TCPLIB を共通変数からARCHごとの変数に変更          
+                      tcplib.o .. オリジナル
+                      tcplib_b.o .. tuba 用
+                    LASFLAG が LASFALG となっていた bug を fix
+         vdccalib.c gets 関数の使用をやめて、fgets に変更
+         analas.c   main関数の型を void から int に変更
+
+00/05/12 ana9.h     default時の GR_PL11 の定義誤り を fix
+         config.h   virtual projection planes の定義を ana9.h から
+                    config.h に変更。
+                    実験ごとのパラメータを整理
+         raytrace.c NPL の定義場所の変更にともなって、
+                    config.h を include するようにする。
+
+00/05/14 ana_v1.57.c  割り込みの処理 act.sa_flags=SA_ONESHOT; を追加
+                      (tuba でのエラー回避のため)
+
+00/05/15 ana_v1.57.c ターゲットの質量についてのマクロ MTAR を定義
+         config.h   
+         kinema.h   kinema.h の二重読み込みを防止するマクロ _KINE を定義
+         ana_v1.57.c
+         config.h   
+00/06/21            古いコードを old/ 以下に移動
+         vdccalib.c talberead の中で driftlength=0 の wire を 
+                    解析から排除
+00/06/22 raytrace.c rotate_y で y座標がゼロになる Bug を Fix
+00/06/23 config.h   E137Apr00 parameters を追加
+00/07/03 ana_v1.57.c  pos_scinti, particleid の型が short になっていた
+         ana_las.c    Bug を Fix
+
+00/07/08 Ver1.60    Version を 1.60 にあげる。
+         ana_v1.60.c include file を v1.6 に変更
+                     analyzing_v1.6.c (_VDC_EFF_CHECK を追加)
+                     booking_v1.6.c  (変更なし)
+                     新規変数を追加
+                         posids, fppos[2][3], thsimp[2][2], thcsimp[2][2],
+                         exsimp[2], good_angh, good_angv,
+         config.h    それぞれの実験ごとのコンパイルオプションを追加
+         vdceff.c    VDC の Efficiency の Position dependence を求める
+                     ためのルーチンを新規追加
+                          (checkposid, calcfpsimp, corsimp)
+         ana9.h      struct vdcdata のメンバを追加(rayang,fppos)
+         vdc3377v4.c 一面で position angle を求める routine を追加
+                     一面から focal plane position を求める simple fp 
+                         を追加
+00/07/09 vdc3377v4.c gamma elimination の補正をした event で
+                     least square fit の時に wirehit数を少なく見積もる 
+                     Bug を Fix
+00/07/13 ana_v1.60.c analyzing_v1.6.c (_MWPC_EFF_CHECK を追加)
+                     新規変数 pcposids, fppangs を追加
+         mwpceff.c   MWPC の Efficiency の Position dependence を求める
+                     ためのルーチンを新規追加 (calcpcsimp)
+         vdceff.c    block が 局所変数になっていた Bug を fix       
+
+00/12/07  Ver1.61   
+         ana_v1.60.c, anasc.c, analas.c, anablp.c, vdccalib.c
+                     Change FHSIZE to FIHSIZE to compile on AIX 
+                     Add _AIX to avoid bite swap on AIX         
+         Makefile    version を 1.61 に変更
+         kinelib.c   m4**2 が negative になった場合のエラー処理を追加

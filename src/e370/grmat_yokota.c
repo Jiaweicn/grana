@@ -1,0 +1,238 @@
+/* grmat.c 08/12/30 for E308 */
+
+#include <stdio.h>
+#include <math.h>
+
+#include "ana10.h"
+#include "config.h"
+
+#define d2r PI/180.0
+#define r2d 180.0/PI
+
+#define N_ELE_X 13
+#define N_ELE_A 6
+#define N_ELE_Y 4
+#define N_ELE_B 18
+
+extern struct runparm grcr;
+extern struct vdcdata grfx;
+
+void grmat(double *fppos,double *colpos,double *theta,double *phi){
+  double x0,xc=0,y0,yc=0,a0,ac=0,b0,bc=0;
+  double tmpa0,tmpy0,tmpb0;
+
+  struct mat {
+    int i;
+    double element;
+  };
+
+#if 1  /* With x**2 term */
+  static struct mat xmat[N_ELE_X]={
+    {0x0000,      -9.5154797e-02},
+    {0x1000,      -6.6070028e-03},
+    {0x0010,       3.3092378e-02},
+    {0x0020,      -5.9067598e-03},
+    {0x1010,       5.5466668e-05},
+    {0x1020,      -4.9281264e-06},
+    {0x2010,       8.2061311e-08},
+    {0x2020,      -1.0458680e-08},
+    {0x3010,       2.3429897e-10},
+    {0x3020,      -2.5898813e-10},
+    {0x4010,       3.8792685e-13},
+    {0x4020,      -7.1805979e-13},
+    {0x2000,      -6.6634147e-07}
+  };
+#endif
+
+  static struct mat amat[N_ELE_A]={
+    {0x0000,   -4.0000000e-01},
+    {0x0010,   -4.4766176e-01},
+    {0x0020,   -4.8635801e-04},
+    {0x1010,   -2.7509397e-05},
+    {0x1020,   -3.9445223e-06},
+    {0x2010,    3.5880244e-08}
+  };
+
+#if 1
+  static struct mat ymat[N_ELE_Y]={
+    {0x0000,    -6.0000000e+00},
+    {0x0100,     1.0000000e+00},
+    {0x1000,     6.4600000e-03},
+    {0x2000,     0.0},
+  };
+#endif
+
+  static struct mat bmat[N_ELE_B]={
+    {0x0000,  1.0000000e+00},
+    {0x0100,  1.8912305e-01},    {0x0200, -3.3211560e-06},
+    {0x0110, -2.0117353e-02},    {0x0210, -4.8006718e-04},
+    {0x0120,  3.5396679e-03},    {0x1100,  2.6046141e-04},
+    {0x1200, -4.8867711e-07},    {0x2100,  1.8598118e-07},
+    {0x2200, -2.2168812e-09},    {0x1110,  5.0856034e-05},
+    {0x1120, -3.0005019e-05},    {0x2110,  2.0811024e-07},
+    {0x1210, -1.8952720e-06},    {0x2210, -4.2403755e-09},
+    {0x2120, -9.9225146e-08},    {0x1220,  1.4517040e-08},
+    {0x2220,  1.0628261e-09}
+  };
+
+
+/** Unit and convention  *********************
+   x0:[mm]: distance from central ray on focal plane
+   y0:[mm]: distance from central ray on focal plane
+   a0:[deg]: Horizontal angle on folcal plane
+   b0:[deg]: Vertical angle on focal plane
+
+#define VDC_TILT 45.0
+#define VDCPOS_FX {{573.0,0,0},{-6,0,0},{0,1,0},VDC_TILT}
+#define VDCPOS_FU {{602.9,0,20},{-6,0,0},{VDC_DX,VDC_DY,0},VDC_TILT}
+#define VDCPOS_FV {{599.1,0,40},{-6,0,0},{-VDC_DX,VDC_DY,0},VDC_TILT}
+#define VDCPOS_RX {{323.0,0,250},{-6,0,0},{0,1,0},VDC_TILT}
+#define VDCPOS_RU {{352.7,0,270},{-6,0,0},{VDC_DX,VDC_DY,0},VDC_TILT}
+#define VDCPOS_RV {{349.3,0,290},{-6,0,0},{-VDC_DX,VDC_DY,0},VDC_TILT}
+#define GR_PL10 {1,0,1,190.0}  focal plane 
+
+   xc:[%]:  Momentum of the analyzed particle. 100%=>Run2131 (974.704 mT)
+   yc:[mm]: Beam spot position in the vertical direction.
+   ac:[deg]: Horizontal scattering angle.
+   bc:[deg]: Vertical scattering angle.
+
+
+*************************************************/
+
+  int i;
+  double pos[3];
+  double newa0;
+  double y_tgt;
+  /*  rotate_y(-grfx.tilt_s,grfx.tilt_c,fppos,pos);*/
+
+  x0=fppos[0];
+  y0=fppos[1];
+  a0=theta[0];
+  b0=phi[0];
+
+#if 0
+  fprintf(stdout,"x0:%f\n",x0);
+  fprintf(stdout,"a0:%f\n",a0);
+  fprintf(stdout,"y0:%f\n",y0);
+  fprintf(stdout,"b0:%f\n",b0);
+#endif
+  tmpa0 = a0-2.0651893e+00-4.6694977e-03*x0-7.8890315e-07*x0*x0;
+
+  for(i=0;i<N_ELE_X;i++){
+    xc+=(xmat[i].element
+	 *pow(x0,(double)(xmat[i].i>>12))        
+	 *pow(y0,(double)((xmat[i].i>>8)&0xf))   
+	 *pow(tmpa0,(double)((xmat[i].i>>4)&0xf))   
+	 *pow(b0,(double)(xmat[i].i&0xf)));
+    /*
+      fprintf(stdout,"%2d %04x %d%d%d%d %10.2f %7.2f %7.2f %7.2f %7.2f\n",
+      i,xmat[i].i,
+      (xmat[i].i>>12),
+      ((xmat[i].i>>8)&0xf),
+      ((xmat[i].i>>4)&0xf),
+      (xmat[i].i&0xf),
+      xmat[i].element,
+      pow(x0,(double)(xmat[i].i>>12)),
+      pow(a0,(double)((xmat[i].i>>8)&0xf)),
+      pow(y0,(double)((xmat[i].i>>4)&0xf)),  
+      pow(b0,(double)(xmat[i].i&0xf)));*/
+  }
+
+
+  for(i=0;i<N_ELE_A;i++){
+    ac+=(amat[i].element
+		 *pow(x0,(double)(amat[i].i>>12))
+		 *pow(y0,(double)((amat[i].i>>8)&0xf))
+		 *pow(tmpa0,(double)((amat[i].i>>4)&0xf))
+		 *pow(b0,(double)(amat[i].i&0xf)));
+  }
+  /**  Added by T. Kawabata on Jan 04, 2007 **/
+  /**  to correct the kinematical effect on 197Au(a,a). **/
+  /*  xc+=((-3.40703E-04*ac-4.10467E-03)*ac);*/
+  /**  to correct the kinematical effect on 58Ni(a,a). **/
+
+  xc+=(-0.19674e-1*ac-0.12051e-2*ac*ac);
+
+
+    for(i=0;i<N_ELE_Y;i++){
+    yc+=(ymat[i].element
+	 *pow(x0,(double)(ymat[i].i>>12))
+	 *pow(y0,(double)((ymat[i].i>>8)&0xf))
+	 *pow(a0,(double)((ymat[i].i>>4)&0xf))
+	 *pow(b0,(double)(ymat[i].i&0xf)));
+  }
+  tmpy0=yc+(-5.1651-.18535*xc-.11169*xc*xc-.13320*xc*xc*xc)*grcr.ytgt/4.5;
+  tmpb0=b0+(-9.1838496e-02+2.9112199e-04*x0+6.0204302e-08*x0*x0);
+  
+
+  for(i=0;i<N_ELE_B;i++){
+    bc+=(bmat[i].element
+		 *pow(x0,(double)(bmat[i].i>>12))
+		 *pow(tmpy0,(double)((bmat[i].i>>8)&0xf))
+		 *pow(tmpa0,(double)((bmat[i].i>>4)&0xf))
+		 *pow(tmpb0,(double)(bmat[i].i&0xf)));
+  }
+  bc+=0.19623424*grcr.ytgt/4.5*ac;
+
+  ///////////change by yokota 2011 Jan
+
+  
+
+#if 1
+  newa0 = -0.014*(xc - 1)*(xc - 1) + 0.04 + ac;
+
+  double xtemp, ytemp, btemp;
+  double y_beam, b_beam, xset, b_mod; 
+  xtemp = xc;
+  ytemp = y0;
+  btemp = bc;
+  xset = 0;
+  b_mod = 0;
+ 
+  xc = -0.0023677 + 0.00345439 * newa0 +0.0014317 * btemp + 0.996698 * xtemp; //5deg
+ 
+  
+  
+  ac = (-0.0484782 + 0.00960145*btemp + 1.72695*newa0 + 0.00248714*newa0*btemp - 0.0449363*xtemp + 0.0214315*xtemp*xtemp + 0.00541882*btemp*btemp + 0.0214315)/100*180/3.1415
+    - 0.07/2 * (xc-xset) + 0.009*(-xc - 0.45)*(-xc - 0.45) - 0.029;
+  
+  yc = ytemp -0.0790032 - 5.21122*btemp + 0.356687*newa0 + 0.0702114*xtemp -0.193615*xtemp*ytemp ;   
+
+  /////parameter set
+ 
+  //b_beam = 1.29;
+  // grcr.ytgt = 0;
+  y_beam = -638.2226*tan(grcr.ytgt*3.1415/180)/14.3;
+  /////
+
+
+  b_mod = (-0.00948 - 1.219*btemp - 0.07765*ytemp - 0.186*newa0 - 0.07666*newa0*btemp + 0.08372*xtemp)
+    *(1-3*y_beam*ac*3.1415/180)/100*180/3.1514
+    + 0.0225*y_beam*180/3.1514 ;
+  bc = b_mod * ((xtemp+xset)*(1-2/1.8)/2+1);     
+
+  //bc = (-0.00948 - 1.219*btemp - 0.07765*ytemp - 0.186*newa0 - 0.07666*newa0*btemp + 0.08372*xtemp)
+  //*(1-3*yc*ac)/100 - 0.0025 + 0.0225*yc;  
+  
+#endif
+  /////////// kokomade
+
+  /*** Added by Kawabata to correct kinematic effect Feb. 8, 2011 ***/
+  xc+=(0.8632e-2)*ac;
+  xc-=((((-0.95262e-3*xc+0.36420e-2)*xc)-0.82634e-2)*xc+0.62837e-2);
+  xc*=0.991;
+  bc-=1.0;
+
+#if 0
+  fprintf(stdout,"xc:%f\n",xc);
+  fprintf(stdout,"ac:%f\n",ac);
+  fprintf(stdout,"yc:%f\n",yc);
+  fprintf(stdout,"bc:%f\n",bc);
+  fprintf(stdout,"\n\n");
+#endif
+  *colpos=xc;
+  *(colpos+1)=yc;
+  *(theta+1)=ac;
+  *(phi+1)=bc;
+}
+

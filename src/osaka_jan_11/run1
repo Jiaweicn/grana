@@ -1,0 +1,10 @@
+echo "Usage: h700 run# b_percent angle calibration_file"
+echo "../root/run$1.root" > input
+echo "$2 $3" >> input
+echo "$4" >>input
+cat input
+echo "sorting run$1.root ... "
+./h700 < input
+mv result.root res$1.root
+echo "$1" > input1
+#root -l plot_ex.C < input1

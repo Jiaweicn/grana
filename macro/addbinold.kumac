@@ -1,0 +1,39 @@
+Macro addbin id1=1 id2=2 min=1 max=2 nadd=2 titl=' ' 
+vec/cre temp1(10000)
+vec/cre temp2(10000)
+hi/get/cont [id1] temp2
+hi/get/abscissa [id1] temp1
+n1=1
+n2=2
+x1=temp1([n1])
+x2=temp1([n2])
+a=[n2]-[n1]
+b=[x2]-[x1]
+d=[a]/[b]
+c=[max]-[x1]+0.5/[d]
+e=[d]*[c]
+nmax=[e]+[n1]-0.5
+c=[min]-[x1]+0.5/[d]
+e=[d]*[c]
+nmin=[e]+[n1]+0.5
+nmax2=$sigma(int([nmax]))
+nmin2=$sigma(int([nmin]))
+MESSAGE id [id1] to id [id2] (rebin [nadd]) 
+MESSAGE ch from [nmin2] to [nmax2]
+xmin=temp1([nmin2])-0.5/[d]
+xmax=temp1([nmax2])+0.5/[d]
+MESSAGE x  from [xmin] to [xmax]
+nbin=([nmax2]-[nmin2]+1)/[nadd]
+nbin2=$sigma(int([nbin]))
+vec/cre temp3([nbin2]) 
+vec/cre temp4([nbin2]) 
+vec/cre temp5([nbin2]) 
+vec/cre temp6([nbin2])
+vec/cre temp7([nbin2])
+1dhisto [id2] [titl] [nbin2] [xmin] [xmax]
+hi/get/rebin [id1] temp3 temp4 temp5 temp6 [nbin2] [nmin2] [nmax2] 
+vec/op/vscale temp4 [nadd] temp7
+hi/put/cont [id2] temp7
+hi/pl [id2]
+vec/del temp1,temp2,temp3,temp4,temp5,temp6,temp7
+RETURN

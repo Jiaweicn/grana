@@ -1,0 +1,8 @@
+macro  on name=paw metafl=-111
+	fortran/file 66 [name].ps
+	graphics/meta 66 [metafl]
+return
+
+macro  off 
+	fortra/close 66
+return

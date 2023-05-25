@@ -1,0 +1,15 @@
+# 1209
+M1      a
+M2      24Mg
+M3      a
+M4      24Mg
+E_LAB   400.30
+B_GR    950.155
+RHO     3.01641
+DEDXGR  1.0
+GRANG   0.0
+Y_TGT   -3.4
+DEX     -0.1198  1.0217
+Z3      2
+GR_MODE UNF
+GR_RFCW 641 1651 10
